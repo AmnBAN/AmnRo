@@ -64,10 +64,10 @@
             // buttonEncryption
             // 
             this.buttonEncryption.ForeColor = System.Drawing.Color.Green;
-            this.buttonEncryption.Location = new System.Drawing.Point(505, 92);
+            this.buttonEncryption.Location = new System.Drawing.Point(453, 92);
             this.buttonEncryption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEncryption.Name = "buttonEncryption";
-            this.buttonEncryption.Size = new System.Drawing.Size(87, 44);
+            this.buttonEncryption.Size = new System.Drawing.Size(139, 48);
             this.buttonEncryption.TabIndex = 2;
             this.buttonEncryption.Text = "رمزگذاری";
             this.buttonEncryption.UseVisualStyleBackColor = true;
