@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmnRo", "AmnRo\AmnRo.csproj", "{35659F23-9B84-45F1-9527-0D40ED558A53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35659F23-9B84-45F1-9527-0D40ED558A53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35659F23-9B84-45F1-9527-0D40ED558A53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35659F23-9B84-45F1-9527-0D40ED558A53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35659F23-9B84-45F1-9527-0D40ED558A53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {722847F5-AE10-4DE4-8683-A2ADE8AD7778}
+	EndGlobalSection
+EndGlobal
