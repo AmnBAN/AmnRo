@@ -21,42 +21,53 @@ namespace AmnRo
         }
         private void FormKeyGen_Load(object sender, EventArgs e)
         {
-            comboBoxKeyLength.SelectedIndex = 2;
+            comboBoxKeyLength.SelectedIndex = 1;
+            textBoxSavePath.Text= folderBrowserDialogSaveKeyPath.SelectedPath = Environment.CurrentDirectory;
         }
         private void BtnKeyGen_Click(object sender, EventArgs e)
-        {
-            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(int.Parse(comboBoxKeyLength.Text));
-            richTextBoxPublicKey.Text = rsa.ToXmlString(false);
-            richTextBoxPRivateKey.Text = rsa.ToXmlString(true);
-            buttonSavePrivateKey.Enabled = buttonSavePublicKey.Enabled = true;
-        }
-
-        private void ButtonSavePublicKey_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog save = new SaveFileDialog();
-            save.RestoreDirectory = true;
-            save.InitialDirectory = Directory.GetCurrentDirectory();
-            save.Filter = "Text Files (*.txt)|*.txt|All Files |*.*";
-            save.FileName = "PublicKey";
-            if ( save.ShowDialog() == DialogResult.OK)
+        {   
+            if (textBoxuserName.Text == "")
             {
-                richTextBoxPublicKey.SaveFile(save.FileName,RichTextBoxStreamType.PlainText);
-                MessageBox.Show("کلید عمومی با موفقیت ذخیره شد", "OK",  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("نام کاربری را وارد کنید", "نام کاربری", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxuserName.Focus();
+                return;
             }
-           
+            if (textBoxPass1.Text == "")
+            {
+                MessageBox.Show("کلمه عبور را وارد کنید", "کلمه عبور", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxuserName.Focus();
+                return;
+            }
+            if (textBoxPass1.Text!=textBoxPass2.Text)
+            {
+                MessageBox.Show("کلمه عبور را یکسان وارد کنید", "کلمه عبور", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxPass1.Focus();
+                return;
+            }
+            if (File.Exists(string.Format("{0}\\{1}-PrivateKey.asc", textBoxSavePath.Text, textBoxuserName.Text)))
+            {
+                MessageBox.Show("کلید عمومی با همین نام کاربری در مسیر انتخاب شده وجود دارد\n لطفا مسیر دیگری را انتخاب کنید", "کلمه عبور", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                buttonChangeSavePath.Focus();
+                return;
+            }
+            if (File.Exists(string.Format("{0}\\{1}-PublicKey.asc", textBoxSavePath.Text, textBoxuserName.Text)))
+            {
+                MessageBox.Show("کلید خصوصی با همین نام کاربری در مسیر انتخاب شده وجود دارد\n لطفا مسیر دیگری را انتخاب کنید", "کلمه عبور", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                buttonChangeSavePath.Focus();
+                return;
+            }
+
+            PGP.Key.GenerateKey(textBoxuserName.Text, textBoxPass1.Text, textBoxSavePath.Text);
+            MessageBox.Show("کلیدها با موفقیت ایجاد شدند", "ایجاد کلید", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
-        private void ButtonSavePrivateKey_Click(object sender, EventArgs e)
+       
+        private void ButtonChangeSavePath_Click(object sender, EventArgs e)
         {
-            SaveFileDialog save = new SaveFileDialog();
-            save.RestoreDirectory = true;
-            save.InitialDirectory = Directory.GetCurrentDirectory();
-            save.Filter = "Text Files (*.txt)|*.txt|All Files |*.*";
-            save.FileName = "PrivateKey";
-            if (save.ShowDialog() == DialogResult.OK)
+            if(folderBrowserDialogSaveKeyPath.ShowDialog()==DialogResult.OK)
             {
-                richTextBoxPRivateKey.SaveFile(save.FileName, RichTextBoxStreamType.PlainText);
-                MessageBox.Show("کلید خصوصی با موفقیت ذخیره شد\nلطفا در نگهداری آن کوشا باشید","OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textBoxSavePath.Text = folderBrowserDialogSaveKeyPath.SelectedPath;
             }
         }
     }

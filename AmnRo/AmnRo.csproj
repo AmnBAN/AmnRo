@@ -69,6 +69,7 @@
     <Compile Include="FormKeyGen.Designer.cs">
       <DependentUpon>FormKeyGen.cs</DependentUpon>
     </Compile>
+    <Compile Include="PGP\Key.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
