@@ -63,7 +63,7 @@ namespace AmnRo.PGP
                     }
                 }
             }
-            catch (PgpException e)
+            catch
             {
                 throw;
             }
@@ -327,7 +327,7 @@ namespace AmnRo.PGP
 
                 #endregion commented code
             }
-            catch (PgpException ex)
+            catch
             {
                 throw;
             }
