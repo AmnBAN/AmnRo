@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.buttonSelectFile = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogPlainFile = new System.Windows.Forms.OpenFileDialog();
             this.textBoxFilePath = new System.Windows.Forms.TextBox();
             this.buttonEncryption = new System.Windows.Forms.Button();
             this.textBoxSavePath = new System.Windows.Forms.TextBox();
             this.buttonSavePath = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxSelectKey = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.labelReciverKey = new System.Windows.Forms.Label();
+            this.openFileDialogReciverPubKey = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // buttonSelectFile
@@ -50,9 +51,9 @@
             this.buttonSelectFile.UseVisualStyleBackColor = true;
             this.buttonSelectFile.Click += new System.EventHandler(this.ButtonSelectFile_Click);
             // 
-            // openFileDialog1
+            // openFileDialogPlainFile
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialogPlainFile.FileName = "openFileDialog1";
             // 
             // textBoxFilePath
             // 
@@ -64,7 +65,7 @@
             // buttonEncryption
             // 
             this.buttonEncryption.ForeColor = System.Drawing.Color.Green;
-            this.buttonEncryption.Location = new System.Drawing.Point(453, 92);
+            this.buttonEncryption.Location = new System.Drawing.Point(234, 128);
             this.buttonEncryption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEncryption.Name = "buttonEncryption";
             this.buttonEncryption.Size = new System.Drawing.Size(139, 48);
@@ -75,7 +76,7 @@
             // 
             // textBoxSavePath
             // 
-            this.textBoxSavePath.Location = new System.Drawing.Point(105, 55);
+            this.textBoxSavePath.Location = new System.Drawing.Point(105, 88);
             this.textBoxSavePath.Name = "textBoxSavePath";
             this.textBoxSavePath.Size = new System.Drawing.Size(487, 23);
             this.textBoxSavePath.TabIndex = 4;
@@ -83,7 +84,7 @@
             // 
             // buttonSavePath
             // 
-            this.buttonSavePath.Location = new System.Drawing.Point(12, 55);
+            this.buttonSavePath.Location = new System.Drawing.Point(12, 85);
             this.buttonSavePath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSavePath.Name = "buttonSavePath";
             this.buttonSavePath.Size = new System.Drawing.Size(87, 28);
@@ -96,31 +97,38 @@
             // 
             this.saveFileDialog1.Filter = "Amn files (*.amn)|*.amn";
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "انتخاب کلید";
+            this.button1.Location = new System.Drawing.Point(12, 51);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(174, 28);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "انتخاب کلید عمومی گیرنده";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // comboBoxSelectKey
+            // labelReciverKey
             // 
-            this.comboBoxSelectKey.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSelectKey.FormattingEnabled = true;
-            this.comboBoxSelectKey.Location = new System.Drawing.Point(105, 92);
-            this.comboBoxSelectKey.Name = "comboBoxSelectKey";
-            this.comboBoxSelectKey.Size = new System.Drawing.Size(270, 24);
-            this.comboBoxSelectKey.TabIndex = 6;
+            this.labelReciverKey.AutoSize = true;
+            this.labelReciverKey.Location = new System.Drawing.Point(192, 57);
+            this.labelReciverKey.Name = "labelReciverKey";
+            this.labelReciverKey.Size = new System.Drawing.Size(218, 16);
+            this.labelReciverKey.TabIndex = 17;
+            this.labelReciverKey.Text = "کلید عمومی گیرنده هنوز انتخاب نشده";
+            // 
+            // openFileDialogReciverPubKey
+            // 
+            this.openFileDialogReciverPubKey.FileName = "openFileDialog2";
+            this.openFileDialogReciverPubKey.Filter = "Public Key files (*.asc)|*.asc";
             // 
             // FormEncryption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 153);
-            this.Controls.Add(this.comboBoxSelectKey);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(604, 185);
+            this.Controls.Add(this.labelReciverKey);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxSavePath);
             this.Controls.Add(this.buttonSavePath);
             this.Controls.Add(this.buttonEncryption);
@@ -140,13 +148,14 @@
         #endregion
 
         private System.Windows.Forms.Button buttonSelectFile;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialogPlainFile;
         private System.Windows.Forms.TextBox textBoxFilePath;
         private System.Windows.Forms.Button buttonEncryption;
         private System.Windows.Forms.TextBox textBoxSavePath;
         private System.Windows.Forms.Button buttonSavePath;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxSelectKey;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelReciverKey;
+        private System.Windows.Forms.OpenFileDialog openFileDialogReciverPubKey;
     }
 }

@@ -69,6 +69,9 @@
     <Compile Include="FormKeyGen.Designer.cs">
       <DependentUpon>FormKeyGen.cs</DependentUpon>
     </Compile>
+    <Compile Include="PGP\Decrypter.cs" />
+    <Compile Include="PGP\Encrypter.cs" />
+    <Compile Include="PGP\EncryptionKeys.cs" />
     <Compile Include="PGP\Key.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

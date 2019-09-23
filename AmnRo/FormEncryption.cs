@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using Starksoft.Aspen.GnuPG;
+using AmnRo.PGP;
 using Org.BouncyCastle;
 
 
@@ -26,12 +26,18 @@ namespace AmnRo
         }
         private void ButtonSelectFile_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog()==DialogResult.OK)
+            if(openFileDialogPlainFile.ShowDialog()==DialogResult.OK)
             {
-                textBoxFilePath.Text = openFileDialog1.FileName;
+                textBoxFilePath.Text = openFileDialogPlainFile.FileName;
             }
         }
-
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialogReciverPubKey.ShowDialog() == DialogResult.OK)
+            {
+                labelReciverKey.Text = openFileDialogReciverPubKey.SafeFileName;
+            }
+        }
         private void ButtonSavePath_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -42,19 +48,15 @@ namespace AmnRo
 
         private void ButtonEncryption_Click(object sender, EventArgs e)
         {
+            EncryptionKeys encryptionKeys = new EncryptionKeys(openFileDialogReciverPubKey.FileName);
+            Encrypter encrypter = new Encrypter(encryptionKeys);
+            using (Stream outputStream = File.Create(textBoxSavePath.Text))
+            {
+                encrypter.Encrypt(outputStream, new FileInfo(openFileDialogPlainFile.FileName));
+            }
+            MessageBox.Show("رمزنگاری با موفقت انجام شد", "انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
 
-            /*
-             * OLD code use gnupgp
-             * 
-            Gpg gpg = new Gpg();
-            gpg.Recipient = "test@test.com";
-            FileStream sourceFile = new FileStream(textBoxFilePath.Text, FileMode.Open);
-            FileStream outputFile = new FileStream(textBoxSavePath.Text, FileMode.OpenOrCreate);
-
-            // encrypt the data using IO Streams - any type of input and output IO Stream can be used
-            gpg.BinaryPath = @"C:\Program Files (x86)\GnuPG\bin\gpg.exe";
-            gpg.Encrypt(sourceFile, outputFile);
-            */
-        }
+        
     }
 }
