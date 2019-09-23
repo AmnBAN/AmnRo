@@ -22,55 +22,50 @@ namespace AmnRo
         }
         private void FormEncryption_Load(object sender, EventArgs e)
         {
-            textBoxSavePath.Text= saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
+            
         }
         private void ButtonSelectFile_Click(object sender, EventArgs e)
         {
-            if(openFileDialogPlainFile.ShowDialog()==DialogResult.OK)
+            if (openFileDialogPlainFile.ShowDialog() == DialogResult.OK)
             {
                 textBoxFilePath.Text = openFileDialogPlainFile.FileName;
             }
         }
-        private void Button1_Click(object sender, EventArgs e)
+        private void ButtonSelectPubKey_Click(object sender, EventArgs e)
         {
             if (openFileDialogReciverPubKey.ShowDialog() == DialogResult.OK)
             {
                 labelReciverKey.Text = openFileDialogReciverPubKey.SafeFileName;
             }
         }
-        private void ButtonSavePath_Click(object sender, EventArgs e)
-        {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                textBoxSavePath.Text = saveFileDialog1.FileName;
-            }
-        }
 
         private void ButtonEncryption_Click(object sender, EventArgs e)
         {
             #region checkPath
-            if(textBoxFilePath.Text=="")
+            if (string.IsNullOrEmpty(textBoxFilePath.Text))
             {
-                MessageBox.Show("لطفا فایل مورد نظر برای رمزکذاری را انتخاب کنبد", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("لطفا فایل مورد نظر برای رمزگذاری را انتخاب کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 buttonSelectFile.Focus();
                 return;
             }
-            if (!File.Exists(textBoxFilePath.Text) )
+            if (!File.Exists(textBoxFilePath.Text))
             {
                 MessageBox.Show("فایل انتخاب شده وجود ندارد یا قابل دسترسی نیست", "فایل وجود ندارد", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 buttonSelectFile.Focus();
                 return;
             }
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
             #endregion
             EncryptionKeys encryptionKeys = new EncryptionKeys(openFileDialogReciverPubKey.FileName);
             Encrypter encrypter = new Encrypter(encryptionKeys);
-            using (Stream outputStream = File.Create(textBoxSavePath.Text))
+            using (Stream outputStream = File.Create(saveFileDialog1.FileName))
             {
                 encrypter.Encrypt(outputStream, new FileInfo(openFileDialogPlainFile.FileName));
             }
-            MessageBox.Show("رمزگذاری با موفقت انجام شد", "انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("رمزگذاری با موفقیت انجام شد", "انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-        
     }
 }

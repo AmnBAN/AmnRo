@@ -28,10 +28,7 @@ namespace AmnRo
 
         private void ButtonSavePath_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                textBoxSavePath.Text = saveFileDialog1.FileName;
-            }
+
         }
 
         private void ButtonSelectPrivateKey_Click(object sender, EventArgs e)
@@ -44,8 +41,13 @@ namespace AmnRo
 
         private void ButtonDecryption_Click(object sender, EventArgs e)
         {
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
+
             Decrypter decrypter = new PGP.Decrypter();
-            decrypter.Decrypt(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, textBoxSavePath.Text);
+            decrypter.Decrypt(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName);
             MessageBox.Show("رمزگشایی با موفقت انجام شد", "انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
