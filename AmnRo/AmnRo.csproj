@@ -35,9 +35,6 @@
     <Reference Include="BouncyCastle.Crypto">
       <HintPath>.\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="starksoft.aspen, Version=1.1.5.0, Culture=neutral, PublicKeyToken=56b8923a24d03eb3, processorArchitecture=MSIL">
-      <HintPath>..\packages\starksoft.aspen.1.1.6\lib\net45\starksoft.aspen.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
