@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AmnRo
 {
-    public partial class Form1 : Form
+    public partial class FormBase : Form
     {
-        public Form1()
+        public FormBase()
         {
             InitializeComponent();
         }
