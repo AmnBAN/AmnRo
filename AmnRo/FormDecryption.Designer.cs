@@ -30,8 +30,6 @@
         {
             this.labelReciverKey = new System.Windows.Forms.Label();
             this.buttonSelectPrivateKey = new System.Windows.Forms.Button();
-            this.textBoxSavePath = new System.Windows.Forms.TextBox();
-            this.buttonSavePath = new System.Windows.Forms.Button();
             this.buttonDecryption = new System.Windows.Forms.Button();
             this.textBoxFilePath = new System.Windows.Forms.TextBox();
             this.buttonSelectFile = new System.Windows.Forms.Button();
@@ -62,29 +60,11 @@
             this.buttonSelectPrivateKey.UseVisualStyleBackColor = true;
             this.buttonSelectPrivateKey.Click += new System.EventHandler(this.ButtonSelectPrivateKey_Click);
             // 
-            // textBoxSavePath
-            // 
-            this.textBoxSavePath.Location = new System.Drawing.Point(101, 124);
-            this.textBoxSavePath.Name = "textBoxSavePath";
-            this.textBoxSavePath.Size = new System.Drawing.Size(487, 23);
-            this.textBoxSavePath.TabIndex = 22;
-            // 
-            // buttonSavePath
-            // 
-            this.buttonSavePath.Location = new System.Drawing.Point(8, 121);
-            this.buttonSavePath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonSavePath.Name = "buttonSavePath";
-            this.buttonSavePath.Size = new System.Drawing.Size(87, 28);
-            this.buttonSavePath.TabIndex = 21;
-            this.buttonSavePath.Text = "محل ذخیره";
-            this.buttonSavePath.UseVisualStyleBackColor = true;
-            this.buttonSavePath.Click += new System.EventHandler(this.ButtonSavePath_Click);
-            // 
             // buttonDecryption
             // 
             this.buttonDecryption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDecryption.ForeColor = System.Drawing.Color.Blue;
-            this.buttonDecryption.Location = new System.Drawing.Point(230, 168);
+            this.buttonDecryption.Location = new System.Drawing.Point(236, 118);
             this.buttonDecryption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonDecryption.Name = "buttonDecryption";
             this.buttonDecryption.Size = new System.Drawing.Size(139, 48);
@@ -120,11 +100,12 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "All files (*.*)|*.*";
+            this.saveFileDialog1.Title = "انتخاب محل ذخیره";
             // 
             // openFileDialogPrivateKey
             // 
             this.openFileDialogPrivateKey.FileName = "openFileDialog2";
-            this.openFileDialogPrivateKey.Filter = "Private Key files (*.asc)|*.asc";
+            this.openFileDialogPrivateKey.Filter = "Private Key files (*.priv)|*.priv";
             this.openFileDialogPrivateKey.Title = "بازکردن کلید خصوصی";
             // 
             // textBoxPassword
@@ -134,7 +115,6 @@
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(476, 23);
             this.textBoxPassword.TabIndex = 25;
-            this.textBoxPassword.Text = "123";
             // 
             // label1
             // 
@@ -149,13 +129,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 224);
+            this.ClientSize = new System.Drawing.Size(601, 180);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelReciverKey);
             this.Controls.Add(this.buttonSelectPrivateKey);
-            this.Controls.Add(this.textBoxSavePath);
-            this.Controls.Add(this.buttonSavePath);
             this.Controls.Add(this.buttonDecryption);
             this.Controls.Add(this.textBoxFilePath);
             this.Controls.Add(this.buttonSelectFile);
@@ -173,8 +151,6 @@
 
         private System.Windows.Forms.Label labelReciverKey;
         private System.Windows.Forms.Button buttonSelectPrivateKey;
-        private System.Windows.Forms.TextBox textBoxSavePath;
-        private System.Windows.Forms.Button buttonSavePath;
         private System.Windows.Forms.Button buttonDecryption;
         private System.Windows.Forms.TextBox textBoxFilePath;
         private System.Windows.Forms.Button buttonSelectFile;

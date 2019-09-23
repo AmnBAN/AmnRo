@@ -31,7 +31,7 @@
             this.comboBoxKeyLength = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnKeyGen = new System.Windows.Forms.Button();
-            this.textBoxuserName = new System.Windows.Forms.TextBox();
+            this.textBoxUserName = new System.Windows.Forms.TextBox();
             this.textBoxPass1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -80,15 +80,15 @@
             this.btnKeyGen.UseVisualStyleBackColor = true;
             this.btnKeyGen.Click += new System.EventHandler(this.BtnKeyGen_Click);
             // 
-            // textBoxuserName
+            // textBoxUserName
             // 
-            this.textBoxuserName.Location = new System.Drawing.Point(112, 19);
-            this.textBoxuserName.MaxLength = 20;
-            this.textBoxuserName.Name = "textBoxuserName";
-            this.textBoxuserName.Size = new System.Drawing.Size(231, 27);
-            this.textBoxuserName.TabIndex = 1;
-            this.textBoxuserName.Text = "amnban";
-            this.textBoxuserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxUserName.Location = new System.Drawing.Point(112, 19);
+            this.textBoxUserName.MaxLength = 20;
+            this.textBoxUserName.Name = "textBoxUserName";
+            this.textBoxUserName.Size = new System.Drawing.Size(231, 27);
+            this.textBoxUserName.TabIndex = 1;
+            this.textBoxUserName.Text = "amnban";
+            this.textBoxUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxPass1
             // 
@@ -97,7 +97,6 @@
             this.textBoxPass1.Name = "textBoxPass1";
             this.textBoxPass1.Size = new System.Drawing.Size(172, 27);
             this.textBoxPass1.TabIndex = 2;
-            this.textBoxPass1.Text = "123";
             this.textBoxPass1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxPass1.UseSystemPasswordChar = true;
             // 
@@ -141,7 +140,6 @@
             this.textBoxPass2.Name = "textBoxPass2";
             this.textBoxPass2.Size = new System.Drawing.Size(204, 27);
             this.textBoxPass2.TabIndex = 3;
-            this.textBoxPass2.Text = "123";
             this.textBoxPass2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxPass2.UseSystemPasswordChar = true;
             // 
@@ -187,7 +185,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxPass1);
-            this.Controls.Add(this.textBoxuserName);
+            this.Controls.Add(this.textBoxUserName);
             this.Controls.Add(this.btnKeyGen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxKeyLength);
@@ -207,7 +205,7 @@
         private System.Windows.Forms.ComboBox comboBoxKeyLength;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnKeyGen;
-        private System.Windows.Forms.TextBox textBoxuserName;
+        private System.Windows.Forms.TextBox textBoxUserName;
         private System.Windows.Forms.TextBox textBoxPass1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
