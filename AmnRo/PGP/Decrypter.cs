@@ -187,7 +187,7 @@ namespace AmnRo.PGP
        * decrypt a given stream.
        */
 
-        public static void Decrypt(string inputfile, string privateKeyFile, string passPhrase, string outputFile)
+        public void Decrypt(string inputfile, string privateKeyFile, string passPhrase, string outputFile)
         {
             if (!File.Exists(inputfile))
                 throw new FileNotFoundException(String.Format("Encrypted File [{0}] not found.", inputfile));

@@ -33,7 +33,9 @@ namespace AmnRo
 
         private void BtnDecryption_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new FormDecryption().ShowDialog();
+            this.Show();
         }
     }
 }

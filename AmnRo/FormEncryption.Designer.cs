@@ -54,6 +54,7 @@
             // openFileDialogPlainFile
             // 
             this.openFileDialogPlainFile.FileName = "openFileDialog1";
+            this.openFileDialogPlainFile.Filter = "All files (*.*)|*.*";
             // 
             // textBoxFilePath
             // 
@@ -64,6 +65,7 @@
             // 
             // buttonEncryption
             // 
+            this.buttonEncryption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEncryption.ForeColor = System.Drawing.Color.Green;
             this.buttonEncryption.Location = new System.Drawing.Point(234, 128);
             this.buttonEncryption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -80,7 +82,6 @@
             this.textBoxSavePath.Name = "textBoxSavePath";
             this.textBoxSavePath.Size = new System.Drawing.Size(487, 23);
             this.textBoxSavePath.TabIndex = 4;
-            this.textBoxSavePath.Text = "پوشه فعلی";
             // 
             // buttonSavePath
             // 

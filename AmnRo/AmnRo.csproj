@@ -57,6 +57,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDecryption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDecryption.Designer.cs">
+      <DependentUpon>FormDecryption.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEncryption.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDecryption.resx">
+      <DependentUpon>FormDecryption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEncryption.resx">
       <DependentUpon>FormEncryption.cs</DependentUpon>
