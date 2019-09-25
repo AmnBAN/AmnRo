@@ -65,9 +65,12 @@ namespace AmnRo
                 textBoxPassword.Focus();
                 return;
             }
-            Decrypter decrypter = new PGP.Decrypter();
-            decrypter.Decrypt(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName);
-            MessageBox.Show("رمزگشایی با موفقت انجام شد", "انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Decrypter decrypter = new PGP.Decrypter();
+                decrypter.Decrypt(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName);
+                MessageBox.Show("رمزگشایی با موفقت انجام شد", "انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
