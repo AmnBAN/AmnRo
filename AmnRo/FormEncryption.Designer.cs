@@ -60,6 +60,7 @@
             this.textBoxFilePath.Name = "textBoxFilePath";
             this.textBoxFilePath.Size = new System.Drawing.Size(487, 23);
             this.textBoxFilePath.TabIndex = 1;
+            this.textBoxFilePath.TextChanged += new System.EventHandler(this.TextBoxFilePath_TextChanged);
             // 
             // buttonEncryption
             // 
@@ -93,6 +94,7 @@
             this.labelReciverKey.Size = new System.Drawing.Size(218, 16);
             this.labelReciverKey.TabIndex = 17;
             this.labelReciverKey.Text = "کلید عمومی گیرنده هنوز انتخاب نشده";
+            this.labelReciverKey.Click += new System.EventHandler(this.LabelReciverKey_Click);
             // 
             // openFileDialogReciverPubKey
             // 
@@ -102,6 +104,7 @@
             // 
             this.saveFileDialog1.Filter = "Amn File (*.amn)|*.amn";
             this.saveFileDialog1.Title = "محل ذخیره فایل را انتخاب کنید";
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveFileDialog1_FileOk);
             // 
             // FormEncryption
             // 
@@ -117,6 +120,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "FormEncryption";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "رمزگذاری";
