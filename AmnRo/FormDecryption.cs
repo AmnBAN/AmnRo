@@ -74,5 +74,27 @@ namespace AmnRo
                 MessageBox.Show("رمزگشایی با موفقت انجام شد", "انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void TextBoxFilePath_TextChanged(object sender, EventArgs e)
+        {
+            saveFileDialog1.Filter = createNewFilter(textBoxFilePath.Text);
+        }
+        private static string createNewFilter(string fileName)
+        {
+                string prefix = "Amn File(*";
+                string from0ToAmn = fileName.Substring(0, fileName.LastIndexOf("."));
+            if (from0ToAmn.Contains("."))
+            {
+                string format = from0ToAmn.Substring(from0ToAmn.LastIndexOf("."));
+                string filter = format + ")| *" + format;
+                return prefix + filter;
+            }
+            else
+                return "Amn File(*.*)| *.*";
+        }
+        private void OpenFileDialogEncryptFile_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

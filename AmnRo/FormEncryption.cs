@@ -82,10 +82,15 @@ namespace AmnRo
         }
         private static string createNewFilter(string fileName)
         {
+            if (fileName.Contains(".")){
             string prefix = "Amn File(*";
-            string filter = fileName.Substring(fileName.LastIndexOf("."))+".amn)| *"+ fileName.Substring(fileName.LastIndexOf(".")) + ".amn";
+            string filter = fileName.Substring(fileName.LastIndexOf(".")) + ".amn)| *" + fileName.Substring(fileName.LastIndexOf(".")) + ".amn";
             return prefix + filter;
-            //Amn File(*.amn)| *.amn
+            }
+            else
+            {
+                return "Amn File(*.amn)| *.amn";
+            }
         }
 
         private void TextBoxFilePath_TextChanged(object sender, EventArgs e)

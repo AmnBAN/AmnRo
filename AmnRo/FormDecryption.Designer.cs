@@ -79,6 +79,7 @@
             this.textBoxFilePath.Name = "textBoxFilePath";
             this.textBoxFilePath.Size = new System.Drawing.Size(487, 23);
             this.textBoxFilePath.TabIndex = 19;
+            this.textBoxFilePath.TextChanged += new System.EventHandler(this.TextBoxFilePath_TextChanged);
             // 
             // buttonSelectFile
             // 
@@ -96,6 +97,7 @@
             this.openFileDialogEncryptFile.FileName = "openFileDialog1";
             this.openFileDialogEncryptFile.Filter = "Amn Files (*.amn)|*.amn";
             this.openFileDialogEncryptFile.Title = "انتخاب فایل رمزشده";
+            this.openFileDialogEncryptFile.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialogEncryptFile_FileOk);
             // 
             // saveFileDialog1
             // 
