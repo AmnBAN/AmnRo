@@ -63,14 +63,15 @@
             // 
             // buttonEncryption
             // 
+            this.buttonEncryption.BackgroundImage = global::AmnRo.Properties.Resources.enc3;
+            this.buttonEncryption.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonEncryption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEncryption.ForeColor = System.Drawing.Color.Green;
-            this.buttonEncryption.Location = new System.Drawing.Point(234, 142);
+            this.buttonEncryption.Location = new System.Drawing.Point(262, 142);
             this.buttonEncryption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEncryption.Name = "buttonEncryption";
-            this.buttonEncryption.Size = new System.Drawing.Size(139, 48);
+            this.buttonEncryption.Size = new System.Drawing.Size(80, 48);
             this.buttonEncryption.TabIndex = 2;
-            this.buttonEncryption.Text = "رمزگذاری";
             this.buttonEncryption.UseVisualStyleBackColor = true;
             this.buttonEncryption.Click += new System.EventHandler(this.ButtonEncryption_Click);
             // 
