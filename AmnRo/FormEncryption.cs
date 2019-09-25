@@ -43,7 +43,15 @@ namespace AmnRo
 
         private void ButtonEncryption_Click(object sender, EventArgs e)
         {
+
             #region checkPath
+
+            if (labelReciverKey.Text == "کلید عمومی گیرنده هنوز انتخاب نشده")
+            {
+                MessageBox.Show("کلید عمومی گیرنده انتخاب نشده است ", "فایل وجود ندارد", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                buttonSelectFile.Focus();
+                return;
+            }
             if (string.IsNullOrEmpty(textBoxFilePath.Text))
             {
                 MessageBox.Show("لطفا فایل مورد نظر برای رمزگذاری را انتخاب کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -68,6 +76,16 @@ namespace AmnRo
                 encrypter.Encrypt(outputStream, new FileInfo(openFileDialogPlainFile.FileName));
             }
             MessageBox.Show("رمزگذاری با موفقیت انجام شد", "انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void TextBoxFilePath_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelReciverKey_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

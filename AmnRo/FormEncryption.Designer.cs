@@ -60,6 +60,7 @@
             this.textBoxFilePath.Name = "textBoxFilePath";
             this.textBoxFilePath.Size = new System.Drawing.Size(487, 23);
             this.textBoxFilePath.TabIndex = 1;
+            this.textBoxFilePath.TextChanged += new System.EventHandler(this.TextBoxFilePath_TextChanged);
             // 
             // buttonEncryption
             // 
@@ -93,6 +94,7 @@
             this.labelReciverKey.Size = new System.Drawing.Size(218, 16);
             this.labelReciverKey.TabIndex = 17;
             this.labelReciverKey.Text = "کلید عمومی گیرنده هنوز انتخاب نشده";
+            this.labelReciverKey.Click += new System.EventHandler(this.LabelReciverKey_Click);
             // 
             // openFileDialogReciverPubKey
             // 
