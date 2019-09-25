@@ -46,7 +46,7 @@ namespace AmnRo
 
             #region checkPath
 
-            if (labelReciverKey.Text == "کلید عمومی گیرنده هنوز انتخاب نشده")
+            if (string.IsNullOrEmpty(openFileDialogReciverPubKey.FileName))
             {
                 MessageBox.Show("کلید عمومی گیرنده انتخاب نشده است ", "فایل وجود ندارد", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 buttonSelectFile.Focus();
