@@ -35,6 +35,9 @@
     <Reference Include="BouncyCastle.Crypto">
       <HintPath>.\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin">
+      <HintPath>..\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

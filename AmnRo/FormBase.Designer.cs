@@ -35,7 +35,7 @@
             // 
             // btnKeyGen
             // 
-            this.btnKeyGen.Location = new System.Drawing.Point(18, 18);
+            this.btnKeyGen.Location = new System.Drawing.Point(18, 80);
             this.btnKeyGen.Margin = new System.Windows.Forms.Padding(4);
             this.btnKeyGen.Name = "btnKeyGen";
             this.btnKeyGen.Size = new System.Drawing.Size(164, 85);
@@ -47,7 +47,7 @@
             // btnEncryption
             // 
             this.btnEncryption.ForeColor = System.Drawing.Color.Green;
-            this.btnEncryption.Location = new System.Drawing.Point(190, 18);
+            this.btnEncryption.Location = new System.Drawing.Point(190, 80);
             this.btnEncryption.Margin = new System.Windows.Forms.Padding(4);
             this.btnEncryption.Name = "btnEncryption";
             this.btnEncryption.Size = new System.Drawing.Size(164, 85);
@@ -59,7 +59,7 @@
             // btnDecryption
             // 
             this.btnDecryption.ForeColor = System.Drawing.Color.Red;
-            this.btnDecryption.Location = new System.Drawing.Point(363, 18);
+            this.btnDecryption.Location = new System.Drawing.Point(363, 80);
             this.btnDecryption.Margin = new System.Windows.Forms.Padding(4);
             this.btnDecryption.Name = "btnDecryption";
             this.btnDecryption.Size = new System.Drawing.Size(164, 85);
@@ -68,18 +68,18 @@
             this.btnDecryption.UseVisualStyleBackColor = true;
             this.btnDecryption.Click += new System.EventHandler(this.BtnDecryption_Click);
             // 
-            // Form1
+            // FormBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 120);
+            this.ClientSize = new System.Drawing.Size(544, 178);
             this.Controls.Add(this.btnDecryption);
             this.Controls.Add(this.btnEncryption);
             this.Controls.Add(this.btnKeyGen);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.MaximizeBox = false;
+            this.Name = "FormBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "..:: AmnRo ::..";
             this.ResumeLayout(false);
