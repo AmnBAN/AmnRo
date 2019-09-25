@@ -104,6 +104,7 @@
             // 
             this.saveFileDialog1.Filter = "Amn File (*.amn)|*.amn";
             this.saveFileDialog1.Title = "محل ذخیره فایل را انتخاب کنید";
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveFileDialog1_FileOk);
             // 
             // FormEncryption
             // 

@@ -31,6 +31,8 @@ namespace AmnRo
             if (openFileDialogPlainFile.ShowDialog() == DialogResult.OK)
             {
                 textBoxFilePath.Text = openFileDialogPlainFile.FileName;
+                saveFileDialog1.Filter = createNewFilter(textBoxFilePath.Text);
+
             }
         }
         private void ButtonSelectPubKey_Click(object sender, EventArgs e)
@@ -64,26 +66,39 @@ namespace AmnRo
                 buttonSelectFile.Focus();
                 return;
             }
-            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
-            {
-                return;
-            }
             #endregion
-            EncryptionKeys encryptionKeys = new EncryptionKeys(openFileDialogReciverPubKey.FileName);
-            Encrypter encrypter = new Encrypter(encryptionKeys);
-            using (Stream outputStream = File.Create(saveFileDialog1.FileName))
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                encrypter.Encrypt(outputStream, new FileInfo(openFileDialogPlainFile.FileName));
+                EncryptionKeys encryptionKeys = new EncryptionKeys(openFileDialogReciverPubKey.FileName);
+                Encrypter encrypter = new Encrypter(encryptionKeys);
+                using (Stream outputStream = File.Create(saveFileDialog1.FileName))
+                {
+                    encrypter.Encrypt(outputStream, new FileInfo(textBoxFilePath.Text));
+                }
+                MessageBox.Show("رمزگذاری با موفقیت انجام شد", "انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
-            MessageBox.Show("رمزگذاری با موفقیت انجام شد", "انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private static string createNewFilter(string fileName)
+        {
+            string prefix = "Amn File(*";
+            string filter = fileName.Substring(fileName.LastIndexOf("."))+".amn)| *"+ fileName.Substring(fileName.LastIndexOf(".")) + ".amn";
+            return prefix + filter;
+            //Amn File(*.amn)| *.amn
         }
 
         private void TextBoxFilePath_TextChanged(object sender, EventArgs e)
         {
-
+            saveFileDialog1.Filter = createNewFilter(textBoxFilePath.Text);
         }
 
         private void LabelReciverKey_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
         }
