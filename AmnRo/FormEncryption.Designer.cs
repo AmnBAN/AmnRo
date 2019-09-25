@@ -40,7 +40,7 @@
             // 
             // buttonSelectFile
             // 
-            this.buttonSelectFile.Location = new System.Drawing.Point(12, 19);
+            this.buttonSelectFile.Location = new System.Drawing.Point(12, 69);
             this.buttonSelectFile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSelectFile.Name = "buttonSelectFile";
             this.buttonSelectFile.Size = new System.Drawing.Size(87, 28);
@@ -56,7 +56,7 @@
             // 
             // textBoxFilePath
             // 
-            this.textBoxFilePath.Location = new System.Drawing.Point(105, 22);
+            this.textBoxFilePath.Location = new System.Drawing.Point(105, 72);
             this.textBoxFilePath.Name = "textBoxFilePath";
             this.textBoxFilePath.Size = new System.Drawing.Size(487, 23);
             this.textBoxFilePath.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             this.buttonEncryption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEncryption.ForeColor = System.Drawing.Color.Green;
-            this.buttonEncryption.Location = new System.Drawing.Point(234, 92);
+            this.buttonEncryption.Location = new System.Drawing.Point(234, 142);
             this.buttonEncryption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEncryption.Name = "buttonEncryption";
             this.buttonEncryption.Size = new System.Drawing.Size(139, 48);
@@ -76,7 +76,7 @@
             // 
             // buttonSelectPubKey
             // 
-            this.buttonSelectPubKey.Location = new System.Drawing.Point(12, 51);
+            this.buttonSelectPubKey.Location = new System.Drawing.Point(12, 101);
             this.buttonSelectPubKey.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSelectPubKey.Name = "buttonSelectPubKey";
             this.buttonSelectPubKey.Size = new System.Drawing.Size(174, 28);
@@ -88,7 +88,7 @@
             // labelReciverKey
             // 
             this.labelReciverKey.AutoSize = true;
-            this.labelReciverKey.Location = new System.Drawing.Point(192, 57);
+            this.labelReciverKey.Location = new System.Drawing.Point(192, 107);
             this.labelReciverKey.Name = "labelReciverKey";
             this.labelReciverKey.Size = new System.Drawing.Size(218, 16);
             this.labelReciverKey.TabIndex = 17;
@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 151);
+            this.ClientSize = new System.Drawing.Size(601, 200);
             this.Controls.Add(this.labelReciverKey);
             this.Controls.Add(this.buttonSelectPubKey);
             this.Controls.Add(this.buttonEncryption);
@@ -115,7 +115,9 @@
             this.Controls.Add(this.buttonSelectFile);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "FormEncryption";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "رمزگذاری";
             this.Load += new System.EventHandler(this.FormEncryption_Load);

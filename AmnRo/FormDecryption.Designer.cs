@@ -43,7 +43,7 @@
             // labelReciverKey
             // 
             this.labelReciverKey.AutoSize = true;
-            this.labelReciverKey.Location = new System.Drawing.Point(188, 47);
+            this.labelReciverKey.Location = new System.Drawing.Point(189, 111);
             this.labelReciverKey.Name = "labelReciverKey";
             this.labelReciverKey.Size = new System.Drawing.Size(187, 16);
             this.labelReciverKey.TabIndex = 24;
@@ -51,7 +51,7 @@
             // 
             // buttonSelectPrivateKey
             // 
-            this.buttonSelectPrivateKey.Location = new System.Drawing.Point(8, 41);
+            this.buttonSelectPrivateKey.Location = new System.Drawing.Point(9, 105);
             this.buttonSelectPrivateKey.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSelectPrivateKey.Name = "buttonSelectPrivateKey";
             this.buttonSelectPrivateKey.Size = new System.Drawing.Size(174, 28);
@@ -64,7 +64,7 @@
             // 
             this.buttonDecryption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDecryption.ForeColor = System.Drawing.Color.Blue;
-            this.buttonDecryption.Location = new System.Drawing.Point(236, 118);
+            this.buttonDecryption.Location = new System.Drawing.Point(237, 182);
             this.buttonDecryption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonDecryption.Name = "buttonDecryption";
             this.buttonDecryption.Size = new System.Drawing.Size(139, 48);
@@ -75,14 +75,14 @@
             // 
             // textBoxFilePath
             // 
-            this.textBoxFilePath.Location = new System.Drawing.Point(101, 12);
+            this.textBoxFilePath.Location = new System.Drawing.Point(102, 76);
             this.textBoxFilePath.Name = "textBoxFilePath";
             this.textBoxFilePath.Size = new System.Drawing.Size(487, 23);
             this.textBoxFilePath.TabIndex = 19;
             // 
             // buttonSelectFile
             // 
-            this.buttonSelectFile.Location = new System.Drawing.Point(8, 9);
+            this.buttonSelectFile.Location = new System.Drawing.Point(9, 73);
             this.buttonSelectFile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSelectFile.Name = "buttonSelectFile";
             this.buttonSelectFile.Size = new System.Drawing.Size(87, 28);
@@ -110,7 +110,7 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(112, 78);
+            this.textBoxPassword.Location = new System.Drawing.Point(113, 142);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(476, 23);
@@ -119,7 +119,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 85);
+            this.label1.Location = new System.Drawing.Point(13, 149);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 16);
             this.label1.TabIndex = 26;
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 180);
+            this.ClientSize = new System.Drawing.Size(608, 239);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelReciverKey);
@@ -139,7 +139,9 @@
             this.Controls.Add(this.buttonSelectFile);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MinimizeBox = false;
             this.Name = "FormDecryption";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "رمزگشایی";
             this.ResumeLayout(false);

@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AmnRo.PGP;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace AmnRo
 {
-    public partial class FormDecryption : Form
+    public partial class FormDecryption : MaterialForm
     {
         public FormDecryption()
         {

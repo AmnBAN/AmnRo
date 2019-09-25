@@ -10,11 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AmnRo.PGP;
 using Org.BouncyCastle;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 
 namespace AmnRo
 {
-    public partial class FormEncryption : Form
+    public partial class FormEncryption : MaterialForm
     {
         public FormEncryption()
         {

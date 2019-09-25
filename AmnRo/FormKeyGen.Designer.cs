@@ -46,14 +46,13 @@
             // comboBoxKeyLength
             // 
             this.comboBoxKeyLength.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKeyLength.Enabled = false;
             this.comboBoxKeyLength.FormattingEnabled = true;
             this.comboBoxKeyLength.Items.AddRange(new object[] {
             "512",
             "1024",
             "2048",
             "4096"});
-            this.comboBoxKeyLength.Location = new System.Drawing.Point(450, 18);
+            this.comboBoxKeyLength.Location = new System.Drawing.Point(450, 70);
             this.comboBoxKeyLength.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxKeyLength.Name = "comboBoxKeyLength";
             this.comboBoxKeyLength.Size = new System.Drawing.Size(100, 27);
@@ -62,7 +61,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(552, 21);
+            this.label1.Location = new System.Drawing.Point(552, 73);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 19);
@@ -72,7 +71,7 @@
             // btnKeyGen
             // 
             this.btnKeyGen.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKeyGen.Location = new System.Drawing.Point(230, 197);
+            this.btnKeyGen.Location = new System.Drawing.Point(230, 227);
             this.btnKeyGen.Name = "btnKeyGen";
             this.btnKeyGen.Size = new System.Drawing.Size(146, 57);
             this.btnKeyGen.TabIndex = 4;
@@ -82,7 +81,7 @@
             // 
             // textBoxUserName
             // 
-            this.textBoxUserName.Location = new System.Drawing.Point(112, 19);
+            this.textBoxUserName.Location = new System.Drawing.Point(112, 71);
             this.textBoxUserName.MaxLength = 20;
             this.textBoxUserName.Name = "textBoxUserName";
             this.textBoxUserName.Size = new System.Drawing.Size(231, 27);
@@ -92,7 +91,7 @@
             // 
             // textBoxPass1
             // 
-            this.textBoxPass1.Location = new System.Drawing.Point(358, 60);
+            this.textBoxPass1.Location = new System.Drawing.Point(358, 112);
             this.textBoxPass1.MaxLength = 10;
             this.textBoxPass1.Name = "textBoxPass1";
             this.textBoxPass1.Size = new System.Drawing.Size(172, 27);
@@ -103,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(350, 22);
+            this.label2.Location = new System.Drawing.Point(350, 74);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -114,7 +113,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(537, 64);
+            this.label3.Location = new System.Drawing.Point(537, 116);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -125,7 +124,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(230, 64);
+            this.label4.Location = new System.Drawing.Point(230, 116);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -135,7 +134,7 @@
             // 
             // textBoxPass2
             // 
-            this.textBoxPass2.Location = new System.Drawing.Point(15, 60);
+            this.textBoxPass2.Location = new System.Drawing.Point(15, 112);
             this.textBoxPass2.MaxLength = 10;
             this.textBoxPass2.Name = "textBoxPass2";
             this.textBoxPass2.Size = new System.Drawing.Size(204, 27);
@@ -146,7 +145,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(478, 115);
+            this.label5.Location = new System.Drawing.Point(478, 163);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -156,7 +155,7 @@
             // 
             // textBoxSavePath
             // 
-            this.textBoxSavePath.Location = new System.Drawing.Point(3, 144);
+            this.textBoxSavePath.Location = new System.Drawing.Point(3, 192);
             this.textBoxSavePath.Name = "textBoxSavePath";
             this.textBoxSavePath.Size = new System.Drawing.Size(611, 27);
             this.textBoxSavePath.TabIndex = 15;
@@ -164,7 +163,7 @@
             // buttonChangeSavePath
             // 
             this.buttonChangeSavePath.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChangeSavePath.Location = new System.Drawing.Point(307, 111);
+            this.buttonChangeSavePath.Location = new System.Drawing.Point(307, 159);
             this.buttonChangeSavePath.Name = "buttonChangeSavePath";
             this.buttonChangeSavePath.Size = new System.Drawing.Size(164, 27);
             this.buttonChangeSavePath.TabIndex = 16;
@@ -176,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 266);
+            this.ClientSize = new System.Drawing.Size(630, 295);
             this.Controls.Add(this.buttonChangeSavePath);
             this.Controls.Add(this.textBoxSavePath);
             this.Controls.Add(this.label5);
@@ -191,7 +190,9 @@
             this.Controls.Add(this.comboBoxKeyLength);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "FormKeyGen";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "تولید کلید";
             this.Load += new System.EventHandler(this.FormKeyGen_Load);
