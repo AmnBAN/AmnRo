@@ -9,11 +9,12 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace AmnRo
 {
-    public partial class FormKeyGen : Form
+    public partial class FormKeyGen : MaterialForm
     {
         public FormKeyGen()
         {
