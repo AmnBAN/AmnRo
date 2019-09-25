@@ -33,6 +33,12 @@ namespace AmnRo
 
         private void ButtonSelectPrivateKey_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(textBoxFilePath.Text))
+            {
+                MessageBox.Show("لطفا فایل مورد نظر برای رمزگشایی را انتخاب کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                buttonSelectFile.Focus();
+                return;
+            }
             if (openFileDialogPrivateKey.ShowDialog() == DialogResult.OK)
             {
                 labelReciverKey.Text = openFileDialogPrivateKey.SafeFileName;
@@ -41,11 +47,24 @@ namespace AmnRo
 
         private void ButtonDecryption_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+            if (string.IsNullOrEmpty(textBoxFilePath.Text))
             {
+                MessageBox.Show("لطفا فایل مورد نظر برای رمزگشایی را انتخاب کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                buttonSelectFile.Focus();
                 return;
             }
-
+            if (string.IsNullOrEmpty(openFileDialogPrivateKey.FileName))
+            {
+                MessageBox.Show("لطفا کلید خصوصی خود را برای رمزگذاری انتخاب کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                buttonSelectPrivateKey.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(textBoxPassword.Text))
+            {
+                MessageBox.Show("لطفا کلمه عبور را وارد کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxPassword.Focus();
+                return;
+            }
             Decrypter decrypter = new PGP.Decrypter();
             decrypter.Decrypt(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName);
             MessageBox.Show("رمزگشایی با موفقت انجام شد", "انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
