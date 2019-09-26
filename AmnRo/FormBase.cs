@@ -50,5 +50,54 @@ namespace AmnRo
             new FormDecryption().ShowDialog();
             this.Show();
         }
+
+        private void BtnKeyGen_MouseHover(object sender, EventArgs e)
+        {
+            label1.Text = "تولید کلید";
+            btnKeyGen.Focus();
+        }
+
+        private void BtnEncryption_MouseHover(object sender, EventArgs e)
+        {
+            label1.Text = "رمزگذاری";
+            btnEncryption.Focus();
+        }
+
+        private void BtnDecryption_MouseHover(object sender, EventArgs e)
+        {
+            label1.Text = "رمزگشایی";
+            btnDecryption.Focus();
+        }
+
+        private void BtnKeyGen_Enter(object sender, EventArgs e)
+        {
+            label1.Text = "تولید کلید";
+        }
+
+        private void BtnEncryption_Enter(object sender, EventArgs e)
+        {
+            label1.Text = "رمزگذاری";
+        }
+
+        private void BtnDecryption_Enter(object sender, EventArgs e)
+        {
+            label1.Text = "رمزگشایی";
+        }
+
+        private void BtnDecryption_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Text = "";
+        }
+
+        private void BtnEncryption_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Text = "";
+        }
+
+        private void BtnKeyGen_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Text = "";
+        }
+
     }
 }
