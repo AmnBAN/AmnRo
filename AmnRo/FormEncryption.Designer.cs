@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEncryption));
             this.buttonSelectFile = new System.Windows.Forms.Button();
             this.openFileDialogPlainFile = new System.Windows.Forms.OpenFileDialog();
             this.textBoxFilePath = new System.Windows.Forms.TextBox();
@@ -118,6 +119,7 @@
             this.Controls.Add(this.textBoxFilePath);
             this.Controls.Add(this.buttonSelectFile);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "FormEncryption";

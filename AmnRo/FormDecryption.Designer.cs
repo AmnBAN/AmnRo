@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDecryption));
             this.labelReciverKey = new System.Windows.Forms.Label();
             this.buttonSelectPrivateKey = new System.Windows.Forms.Button();
             this.buttonDecryption = new System.Windows.Forms.Button();
@@ -142,6 +143,7 @@
             this.Controls.Add(this.textBoxFilePath);
             this.Controls.Add(this.buttonSelectFile);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimizeBox = false;
             this.Name = "FormDecryption";
