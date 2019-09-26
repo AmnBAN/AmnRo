@@ -66,10 +66,10 @@
             this.buttonDecryption.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonDecryption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDecryption.ForeColor = System.Drawing.Color.Blue;
-            this.buttonDecryption.Location = new System.Drawing.Point(267, 185);
+            this.buttonDecryption.Location = new System.Drawing.Point(281, 180);
             this.buttonDecryption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonDecryption.Name = "buttonDecryption";
-            this.buttonDecryption.Size = new System.Drawing.Size(74, 48);
+            this.buttonDecryption.Size = new System.Drawing.Size(60, 52);
             this.buttonDecryption.TabIndex = 20;
             this.buttonDecryption.UseVisualStyleBackColor = true;
             this.buttonDecryption.Click += new System.EventHandler(this.ButtonDecryption_Click);
