@@ -49,12 +49,7 @@ namespace AmnRo
 
         private void ButtonDecryption_Click(object sender, EventArgs e)
         {
-            if(labelReciverKey.Text.Equals("کلید خصوصی هنوز انتخاب نشده")  || openFileDialogPrivateKey.ShowDialog() != DialogResult.OK)
-            {
-                MessageBox.Show("کلید خصوصی انتخاب نشده است", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                buttonSelectFile.Focus();
-                return;
-            }
+           
             if (string.IsNullOrEmpty(textBoxFilePath.Text))
             {
                 MessageBox.Show("لطفا فایل مورد نظر برای رمزگشایی را انتخاب کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -65,6 +60,12 @@ namespace AmnRo
             {
                 MessageBox.Show("لطفا کلید خصوصی خود را برای رمزگذاری انتخاب کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 buttonSelectPrivateKey.Focus();
+                return;
+            }
+            if (labelReciverKey.Text.Equals("کلید خصوصی هنوز انتخاب نشده"))
+            {
+                MessageBox.Show("کلید خصوصی انتخاب نشده است", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                buttonSelectFile.Focus();
                 return;
             }
             if (string.IsNullOrEmpty(textBoxPassword.Text))
@@ -87,16 +88,19 @@ namespace AmnRo
         }
         private static string createNewFilter(string fileName)
         {
+            if (fileName.Contains("."))
+            {
                 string prefix = "Amn File(*";
                 string from0ToAmn = fileName.Substring(0, fileName.LastIndexOf("."));
-            if (from0ToAmn.Contains("."))
-            {
-                string format = from0ToAmn.Substring(from0ToAmn.LastIndexOf("."));
-                string filter = format + ")| *" + format;
-                return prefix + filter;
+                if (from0ToAmn.Contains("."))
+                {
+                    string format = from0ToAmn.Substring(from0ToAmn.LastIndexOf("."));
+                    string filter = format + ")| *" + format;
+                    return prefix + filter;
+                }
             }
-            else
                 return "Amn File(*.*)| *.*";
+
         }
         private void OpenFileDialogEncryptFile_FileOk(object sender, CancelEventArgs e)
         {

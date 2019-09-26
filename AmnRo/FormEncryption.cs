@@ -48,12 +48,6 @@ namespace AmnRo
 
             #region checkPath
 
-            if (string.IsNullOrEmpty(openFileDialogReciverPubKey.FileName))
-            {
-                MessageBox.Show("کلید عمومی گیرنده انتخاب نشده است ", "فایل وجود ندارد", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                buttonSelectFile.Focus();
-                return;
-            }
             if (string.IsNullOrEmpty(textBoxFilePath.Text))
             {
                 MessageBox.Show("لطفا فایل مورد نظر برای رمزگذاری را انتخاب کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -63,6 +57,12 @@ namespace AmnRo
             if (!File.Exists(textBoxFilePath.Text))
             {
                 MessageBox.Show("فایل انتخاب شده وجود ندارد یا قابل دسترسی نیست", "فایل وجود ندارد", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                buttonSelectFile.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(openFileDialogReciverPubKey.FileName))
+            {
+                MessageBox.Show("کلید عمومی گیرنده انتخاب نشده است ", "فایل وجود ندارد", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 buttonSelectFile.Focus();
                 return;
             }
