@@ -49,6 +49,12 @@ namespace AmnRo
 
         private void ButtonDecryption_Click(object sender, EventArgs e)
         {
+            if(labelReciverKey.Text.Equals("کلید خصوصی هنوز انتخاب نشده")  || openFileDialogPrivateKey.ShowDialog() != DialogResult.OK)
+            {
+                MessageBox.Show("کلید خصوصی انتخاب نشده است", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                buttonSelectFile.Focus();
+                return;
+            }
             if (string.IsNullOrEmpty(textBoxFilePath.Text))
             {
                 MessageBox.Show("لطفا فایل مورد نظر برای رمزگشایی را انتخاب کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -93,6 +99,11 @@ namespace AmnRo
                 return "Amn File(*.*)| *.*";
         }
         private void OpenFileDialogEncryptFile_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void LabelReciverKey_Click(object sender, EventArgs e)
         {
 
         }

@@ -48,6 +48,7 @@
             this.labelReciverKey.Size = new System.Drawing.Size(187, 16);
             this.labelReciverKey.TabIndex = 24;
             this.labelReciverKey.Text = "کلید خصوصی هنوز انتخاب نشده";
+            this.labelReciverKey.Click += new System.EventHandler(this.LabelReciverKey_Click);
             // 
             // buttonSelectPrivateKey
             // 
