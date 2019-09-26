@@ -81,7 +81,7 @@ namespace AmnRo
                 {
                     decrypter.Decrypt(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName);
                 }
-                catch (Exception)
+                catch
                 {
                     MessageBox.Show("کلمه عبور اشتباه است", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
