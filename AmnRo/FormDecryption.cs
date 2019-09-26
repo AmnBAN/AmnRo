@@ -77,7 +77,15 @@ namespace AmnRo
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 Decrypter decrypter = new PGP.Decrypter();
-                decrypter.Decrypt(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName);
+                try
+                {
+                    decrypter.Decrypt(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("کلمه عبور اشتباه است", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 MessageBox.Show("رمزگشایی با موفقت انجام شد", "انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
