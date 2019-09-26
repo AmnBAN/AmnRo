@@ -91,6 +91,7 @@
             // labelReciverKey
             // 
             this.labelReciverKey.AutoSize = true;
+            this.labelReciverKey.BackColor = System.Drawing.Color.Transparent;
             this.labelReciverKey.Location = new System.Drawing.Point(192, 110);
             this.labelReciverKey.Name = "labelReciverKey";
             this.labelReciverKey.Size = new System.Drawing.Size(218, 16);

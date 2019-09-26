@@ -62,6 +62,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(552, 73);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -71,6 +72,7 @@
             // 
             // btnKeyGen
             // 
+            this.btnKeyGen.BackColor = System.Drawing.SystemColors.Control;
             this.btnKeyGen.BackgroundImage = global::AmnRo.Properties.Resources.keygen;
             this.btnKeyGen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnKeyGen.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,7 +80,7 @@
             this.btnKeyGen.Name = "btnKeyGen";
             this.btnKeyGen.Size = new System.Drawing.Size(66, 57);
             this.btnKeyGen.TabIndex = 4;
-            this.btnKeyGen.UseVisualStyleBackColor = true;
+            this.btnKeyGen.UseVisualStyleBackColor = false;
             this.btnKeyGen.Click += new System.EventHandler(this.BtnKeyGen_Click);
             // 
             // textBoxUserName
@@ -104,6 +106,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(350, 74);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -115,6 +118,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(537, 116);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -126,6 +130,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(230, 116);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -147,6 +152,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(478, 163);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
