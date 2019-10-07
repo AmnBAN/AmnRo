@@ -107,5 +107,16 @@ namespace AmnRo
         {
 
         }
+
+        private void TextBoxFilePath_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void TextBoxFilePath_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            textBoxFilePath.Text = fileNames[0];
+        }
     }
 }

@@ -79,11 +79,14 @@
             // 
             // textBoxFilePath
             // 
+            this.textBoxFilePath.AllowDrop = true;
             this.textBoxFilePath.Location = new System.Drawing.Point(102, 76);
             this.textBoxFilePath.Name = "textBoxFilePath";
             this.textBoxFilePath.Size = new System.Drawing.Size(487, 23);
             this.textBoxFilePath.TabIndex = 19;
             this.textBoxFilePath.TextChanged += new System.EventHandler(this.TextBoxFilePath_TextChanged);
+            this.textBoxFilePath.DragDrop += new System.Windows.Forms.DragEventHandler(this.TextBoxFilePath_DragDrop);
+            this.textBoxFilePath.DragEnter += new System.Windows.Forms.DragEventHandler(this.TextBoxFilePath_DragEnter);
             // 
             // buttonSelectFile
             // 
