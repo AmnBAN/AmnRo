@@ -61,6 +61,16 @@ namespace AmnRo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] BouncyCastle_Crypto {
+            get {
+                object obj = ResourceManager.GetObject("BouncyCastle_Crypto", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap dec4 {
@@ -87,6 +97,16 @@ namespace AmnRo.Properties {
             get {
                 object obj = ResourceManager.GetObject("keygen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] MaterialSkin {
+            get {
+                object obj = ResourceManager.GetObject("MaterialSkin", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }
