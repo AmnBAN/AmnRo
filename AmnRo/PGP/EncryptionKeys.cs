@@ -24,6 +24,17 @@ namespace AmnRo.PGP
 
             PublicKey = ReadPublicKey(publicKeyPath);
         }
+        public EncryptionKeys(string publicKeyText, Boolean isKey)
+        {
+
+            if (string.IsNullOrEmpty(publicKeyText))
+
+                throw new ArgumentException("Public key string is NULL.", "publicKeyString");
+
+            PgpObjectFactory pgpObjectFactory = new PgpObjectFactory(Convert.FromBase64String(publicKeyText));
+            PgpPublicKeyRing pgpPublicKeyRing = (PgpPublicKeyRing)pgpObjectFactory.NextPgpObject();
+            PublicKey = pgpPublicKeyRing.GetPublicKey();
+        }
         public EncryptionKeys(string publicKeyPath, string privateKeyPath, string passPhrase)
         {
 

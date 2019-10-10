@@ -37,6 +37,7 @@
             this.labelReciverKey = new System.Windows.Forms.Label();
             this.openFileDialogReciverPubKey = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.checkBoxAmnbanKey = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // buttonSelectFile
@@ -112,11 +113,22 @@
             this.saveFileDialog1.Title = "محل ذخیره فایل را انتخاب کنید";
             this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveFileDialog1_FileOk);
             // 
+            // checkBoxAmnbanKey
+            // 
+            this.checkBoxAmnbanKey.AutoSize = true;
+            this.checkBoxAmnbanKey.Location = new System.Drawing.Point(427, 112);
+            this.checkBoxAmnbanKey.Name = "checkBoxAmnbanKey";
+            this.checkBoxAmnbanKey.Size = new System.Drawing.Size(109, 20);
+            this.checkBoxAmnbanKey.TabIndex = 18;
+            this.checkBoxAmnbanKey.Text = "Ammnban Key";
+            this.checkBoxAmnbanKey.UseVisualStyleBackColor = true;
+            // 
             // FormEncryption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 217);
+            this.Controls.Add(this.checkBoxAmnbanKey);
             this.Controls.Add(this.labelReciverKey);
             this.Controls.Add(this.buttonSelectPubKey);
             this.Controls.Add(this.buttonEncryption);
@@ -147,5 +159,6 @@
         private System.Windows.Forms.Label labelReciverKey;
         private System.Windows.Forms.OpenFileDialog openFileDialogReciverPubKey;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.CheckBox checkBoxAmnbanKey;
     }
 }
