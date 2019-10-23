@@ -49,7 +49,6 @@
             this.comboBoxKeyLength.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKeyLength.FormattingEnabled = true;
             this.comboBoxKeyLength.Items.AddRange(new object[] {
-            "512",
             "1024",
             "2048",
             "4096"});
