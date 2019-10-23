@@ -61,6 +61,21 @@ namespace AmnRo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to mIsEXZ7A+wEEAIcpSQ5NEGuvegx+pz6OYYzNccBRcPaCqrtOV+yKyVQz+NooyBgO
+        ///fGnHKGr04oPtCwI5g/dZyeSvfC5dHW7tf30NRpB3rFIwKSHQkynmBdpfhPJZHfnH
+        ///f7wbytdCrSfA7W/5hFNjyo10n9n/k0c3wvwE3TiyknIz7TqV9JnVWp0vAAUTtAZh
+        ///bW5iYW6InAQQAQIABgUCXZ8jawAKCRALh8W68s5W9lQDA/4xnmwuUJ5kVy4QRZHk
+        ///NZCJPIQPEF2birAxDiYFKuk1CLonH/fVTIzDAd8Ut/afIHHM4Ob9zSAJG0USYFDu
+        ///kkHQd293dK4HpGvgj/Uo7Lb6VTNhxJlCyYVUBWHVv+VAXE22sWuRWhPanrAQQdn7
+        ///XdJtT+1wlwmTGixQ4VcWJF0/Rg==.
+        /// </summary>
+        internal static string AmnBAN_PubKey {
+            get {
+                return ResourceManager.GetString("AmnBAN-PubKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] BouncyCastle_Crypto {

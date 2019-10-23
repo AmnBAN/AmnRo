@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AmnRo.PGP;
-using Org.BouncyCastle;
-using MaterialSkin;
 using MaterialSkin.Controls;
 
 
@@ -60,7 +52,7 @@ namespace AmnRo
                 buttonSelectFile.Focus();
                 return;
             }
-            if (string.IsNullOrEmpty(openFileDialogReciverPubKey.FileName))
+            if (string.IsNullOrEmpty(openFileDialogReciverPubKey.FileName) && !checkBoxAmnbanKey.Checked)
             {
                 MessageBox.Show("کلید عمومی گیرنده انتخاب نشده است ", "فایل وجود ندارد", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 buttonSelectFile.Focus();
@@ -70,7 +62,13 @@ namespace AmnRo
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                EncryptionKeys encryptionKeys = new EncryptionKeys(openFileDialogReciverPubKey.FileName);
+                EncryptionKeys encryptionKeys;
+
+                if (checkBoxAmnbanKey.Checked)
+                    encryptionKeys = new EncryptionKeys(Properties.Resources.AmnBAN_PubKey , true);
+                else
+                    encryptionKeys = new EncryptionKeys(openFileDialogReciverPubKey.FileName);
+
                 Encrypter encrypter = new Encrypter(encryptionKeys);
                 using (Stream outputStream = File.Create(saveFileDialog1.FileName))
                 {
