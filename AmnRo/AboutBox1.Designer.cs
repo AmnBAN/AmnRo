@@ -60,8 +60,8 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.64315F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.52282F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(524, 241);
             this.tableLayoutPanel.TabIndex = 0;
             // 
@@ -125,7 +125,7 @@
             this.textBoxDescription.ReadOnly = true;
             this.textBoxDescription.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDescription.Size = new System.Drawing.Size(239, 114);
+            this.textBoxDescription.Size = new System.Drawing.Size(239, 103);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
             this.textBoxDescription.Text = resources.GetString("textBoxDescription.Text");
@@ -134,9 +134,9 @@
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.okButton.Location = new System.Drawing.Point(446, 219);
+            this.okButton.Location = new System.Drawing.Point(437, 208);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 19);
+            this.okButton.Size = new System.Drawing.Size(84, 30);
             this.okButton.TabIndex = 24;
             this.okButton.Text = "&OK";
             // 
