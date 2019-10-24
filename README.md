@@ -9,7 +9,7 @@ https://github.com/AmnBAN/AmnRo/releases
 
 ![How to use](https://user-images.githubusercontent.com/50942920/66287105-42f2ba00-e8e1-11e9-8afb-09f2a826b194.gif)
 
-#Change Log:
+# Change Log:
 ## Version [0.2.0] - 2019-10-24
 ### Added
 - About from is added to project.
