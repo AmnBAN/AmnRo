@@ -32,7 +32,8 @@ namespace AmnRo
         }
         private void FormKeyGen_Load(object sender, EventArgs e)
         {
-
+            comboBoxKeyLength.SelectedIndex = 1;
+            textBoxSavePath.Text = folderBrowserDialogSaveKeyPath.SelectedPath = Environment.CurrentDirectory;
         }
         private void ButtonChangeSavePath_Click(object sender, EventArgs e)
         {
