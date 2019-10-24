@@ -22,8 +22,7 @@ namespace AmnRo
         }
         private void FormKeyGen_Load(object sender, EventArgs e)
         {
-            comboBoxKeyLength.SelectedIndex = 1;
-            textBoxSavePath.Text= folderBrowserDialogSaveKeyPath.SelectedPath = Environment.CurrentDirectory;
+
         }
         private void ButtonChangeSavePath_Click(object sender, EventArgs e)
         {
@@ -58,7 +57,7 @@ namespace AmnRo
                 buttonChangeSavePath.Focus();
                 return;
             }
-            if (File.Exists(string.Format("{0}\\{1}-PublicKey.pub", textBoxSavePath.Text, textBoxUserName.Text)))
+            if (File.Exists(string.Format("{0}\\{1}-PublicKey.pubk", textBoxSavePath.Text, textBoxUserName.Text)))
             {
                 MessageBox.Show("کلید خصوصی با همین نام کاربری در مسیر انتخاب شده وجود دارد\n لطفا مسیر دیگری را انتخاب کنید", "کلمه عبور", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 buttonChangeSavePath.Focus();
@@ -70,5 +69,12 @@ namespace AmnRo
             
         }
 
+        private void FormKeyGen_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

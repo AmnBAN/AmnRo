@@ -23,7 +23,7 @@ namespace AmnRo.PGP
             kpg.Init(new RsaKeyGenerationParameters(BigInteger.ValueOf(0x13), new SecureRandom(), 1024, 8));
             AsymmetricCipherKeyPair kp = kpg.GenerateKeyPair();
             FileStream out1 = new FileInfo(string.Format("{0}\\{1}-PrivateKey.priv", keyStorePath, username)).OpenWrite();
-            FileStream out2 = new FileInfo(string.Format("{0}\\{1}-PublicKey.pub", keyStorePath, username)).OpenWrite();
+            FileStream out2 = new FileInfo(string.Format("{0}\\{1}-PublicKey.pubk", keyStorePath, username)).OpenWrite();
             ExportKeyPair(out1, out2, kp.Public, kp.Private, username, password.ToCharArray(), true);
             out1.Close();
             out2.Close();

@@ -61,13 +61,13 @@ namespace AmnRo.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to mIsEXZ7A+wEEAIcpSQ5NEGuvegx+pz6OYYzNccBRcPaCqrtOV+yKyVQz+NooyBgO
-        ///fGnHKGr04oPtCwI5g/dZyeSvfC5dHW7tf30NRpB3rFIwKSHQkynmBdpfhPJZHfnH
-        ///f7wbytdCrSfA7W/5hFNjyo10n9n/k0c3wvwE3TiyknIz7TqV9JnVWp0vAAUTtAZh
-        ///bW5iYW6InAQQAQIABgUCXZ8jawAKCRALh8W68s5W9lQDA/4xnmwuUJ5kVy4QRZHk
-        ///NZCJPIQPEF2birAxDiYFKuk1CLonH/fVTIzDAd8Ut/afIHHM4Ob9zSAJG0USYFDu
-        ///kkHQd293dK4HpGvgj/Uo7Lb6VTNhxJlCyYVUBWHVv+VAXE22sWuRWhPanrAQQdn7
-        ///XdJtT+1wlwmTGixQ4VcWJF0/Rg==.
+        ///   Looks up a localized string similar to mIsEXbBYrQEEALWCbD5X2+HxGB9lSElMSnf49uMOI8voIqXjDtNRs3vzm14mdHhx
+        ///xam/cKXF1HmPz4XkmbiubVOGxsy7jzoCmMkQn2+vo8bJWNlYycEwfD5GtSP7AZdP
+        ///TDmbe+BMrNbMd2IA4ya2jvrRu8Q7fSCsSXkpb5Q0jPwJqvFiaq+Pahr1AAUTtAlh
+        ///bW5iYW4tSzGInAQQAQIABgUCXbAndQAKCRCD98b5hwrBQTU2BACGLnNM8MiwQXfd
+        ///z2YEkwZNza7ibArbv6ZabnHZo/Cg1VLZ1Ywk34+wwMEbal2pWD8SbCGw3fuc8lyq
+        ///NrC2bRX6HqIGqxqEKxojASma6asLzZeX1W9sM9wat/esZXhE4XNAnCKXf66D4v8l
+        ///0AsHa7u4DMVElPY0RVJLFv4/jCoptw==.
         /// </summary>
         internal static string AmnBAN_PubKey {
             get {

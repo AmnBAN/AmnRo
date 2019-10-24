@@ -131,5 +131,16 @@ namespace AmnRo
             textBoxFilePath.Text = fileNames[0];
         }
 
+        private void FormDecryption_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                ButtonDecryption_Click(sender, e);
+            }
+        }
     }
 }

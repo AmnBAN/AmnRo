@@ -99,5 +99,12 @@ namespace AmnRo
             label1.Text = "";
         }
 
+        private void FormBase_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

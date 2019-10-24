@@ -197,6 +197,7 @@
             this.Controls.Add(this.comboBoxKeyLength);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormKeyGen";
@@ -204,6 +205,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "تولید کلید";
             this.Load += new System.EventHandler(this.FormKeyGen_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormKeyGen_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -148,12 +148,14 @@
             this.Controls.Add(this.buttonSelectFile);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimizeBox = false;
             this.Name = "FormDecryption";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "رمزگشایی";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormDecryption_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

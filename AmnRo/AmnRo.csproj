@@ -154,7 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_CEI_icon.ico" />
-    <None Include="Resources\amnbanKey.txt" />
     <None Include="Resources\MaterialSkin.dll" />
     <None Include="Resources\BouncyCastle.Crypto.dll" />
   </ItemGroup>
