@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 using AmnRo.PGP;
+using MaterialSkin;
 using MaterialSkin.Controls;
 
 
@@ -13,6 +14,15 @@ namespace AmnRo
         public FormEncryption()
         {
             InitializeComponent();
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            //Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Green400, Primary.Green500,
+                Primary.Green500, Accent.LightGreen200,
+                TextShade.WHITE
+            );
         }
         private void FormEncryption_Load(object sender, EventArgs e)
         {
@@ -52,7 +62,17 @@ namespace AmnRo
                 buttonSelectFile.Focus();
                 return;
             }
-            if (string.IsNullOrEmpty(openFileDialogReciverPubKey.FileName) && !checkBoxAmnbanKey.Checked)
+            if (radioButtonSelectKey.Checked)
+            {
+                if (string.IsNullOrEmpty(openFileDialogReciverPubKey.FileName))
+                {
+                    MessageBox.Show("کلید عمومی گیرنده انتخاب نشده است ", "فایل وجود ندارد", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    buttonSelectFile.Focus();
+                    return;
+                }
+            }
+
+            else if (!radioButtonAmnBanKey.Checked)
             {
                 MessageBox.Show("کلید عمومی گیرنده انتخاب نشده است ", "فایل وجود ندارد", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 buttonSelectFile.Focus();
@@ -64,10 +84,15 @@ namespace AmnRo
             {
                 EncryptionKeys encryptionKeys;
 
-                if (checkBoxAmnbanKey.Checked)
-                    encryptionKeys = new EncryptionKeys(Properties.Resources.AmnBAN_PubKey , true);
+                if(radioButtonAmnBanKey.Checked)
+                    encryptionKeys = new EncryptionKeys(Properties.Resources.AmnBAN_PubKey, true);
                 else
                     encryptionKeys = new EncryptionKeys(openFileDialogReciverPubKey.FileName);
+
+                //if (checkBoxAmnbanKey.Checked)
+                //    encryptionKeys = new EncryptionKeys(Properties.Resources.AmnBAN_PubKey , true);
+                //else
+                //    encryptionKeys = new EncryptionKeys(openFileDialogReciverPubKey.FileName);
 
                 Encrypter encrypter = new Encrypter(encryptionKeys);
                 using (Stream outputStream = File.Create(saveFileDialog1.FileName))
@@ -115,6 +140,22 @@ namespace AmnRo
         {
             string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             textBoxFilePath.Text = fileNames[0];
+        }
+
+        private void FormEncryption_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        private void RadioButtonAmnBanKey_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButtonAmnBanKey.Checked)
+                buttonSelectPubKey.Enabled = false;
+            else
+                buttonSelectPubKey.Enabled = true;
         }
     }
 }

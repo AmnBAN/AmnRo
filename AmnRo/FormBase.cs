@@ -24,8 +24,8 @@ namespace AmnRo
 
             // Configure color schema
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Blue400, Primary.Blue500,
-                Primary.Blue500, Accent.LightBlue200,
+                Primary.BlueGrey800, Primary.BlueGrey900,
+                Primary.BlueGrey500, Accent.LightBlue200,
                 TextShade.WHITE
             );
         }
@@ -99,5 +99,19 @@ namespace AmnRo
             label1.Text = "";
         }
 
+        private void FormBase_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        private void ButtonAbout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AboutBox().ShowDialog();
+            this.Show();
+        }
     }
 }

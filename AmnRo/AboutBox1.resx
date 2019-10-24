@@ -117,35 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AmnBAN-PubKey" xml:space="preserve">
-    <value>mIsEXbBYrQEEALWCbD5X2+HxGB9lSElMSnf49uMOI8voIqXjDtNRs3vzm14mdHhx
-xam/cKXF1HmPz4XkmbiubVOGxsy7jzoCmMkQn2+vo8bJWNlYycEwfD5GtSP7AZdP
-TDmbe+BMrNbMd2IA4ya2jvrRu8Q7fSCsSXkpb5Q0jPwJqvFiaq+Pahr1AAUTtAlh
-bW5iYW4tSzGInAQQAQIABgUCXbAndQAKCRCD98b5hwrBQTU2BACGLnNM8MiwQXfd
-z2YEkwZNza7ibArbv6ZabnHZo/Cg1VLZ1Ywk34+wwMEbal2pWD8SbCGw3fuc8lyq
-NrC2bRX6HqIGqxqEKxojASma6asLzZeX1W9sM9wat/esZXhE4XNAnCKXf66D4v8l
-0AsHa7u4DMVElPY0RVJLFv4/jCoptw==</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icons8-infographic-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-infographic-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dec4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dec4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BouncyCastle_Crypto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BouncyCastle.Crypto.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="keygen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\keygen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enc3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enc3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MaterialSkin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MaterialSkin.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="amnro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\amnro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="textBoxDescription.Text" xml:space="preserve">
+    <value>امن رو ابزار امن انتقال فایل
+شرایط استفاده:
+این پروژه تحت لایسنس GPL-3.0 منتشر شده است وتمام حقوق مادی و معنوی آن برای امن‌بان فناوری شریف محفوظ است.
+هرگونه استفاده تجاری از این پروژه نیاز به اخذ مجوز از امن‌بان فناوری شریف دارد اما استفاده شخصی مجاز است.
+رفع مسئولیت:
+ امن‌بان هیچ گونه تعهدی در قبال استفاده غیرمجاز و مشکلات و ضعف‌های نسخه رایگان ندارد و تمام مسئولیت به عهده استفاده کننده است.
+امن‌بان هیچ گونه مسئولیتی در قبال کتابخانه‌های استفاده شده در محصول ندارد.</value>
   </data>
 </root>

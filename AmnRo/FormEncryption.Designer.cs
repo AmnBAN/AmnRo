@@ -37,7 +37,8 @@
             this.labelReciverKey = new System.Windows.Forms.Label();
             this.openFileDialogReciverPubKey = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.checkBoxAmnbanKey = new System.Windows.Forms.CheckBox();
+            this.radioButtonSelectKey = new System.Windows.Forms.RadioButton();
+            this.radioButtonAmnBanKey = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // buttonSelectFile
@@ -83,7 +84,7 @@
             // 
             // buttonSelectPubKey
             // 
-            this.buttonSelectPubKey.Location = new System.Drawing.Point(12, 104);
+            this.buttonSelectPubKey.Location = new System.Drawing.Point(305, 108);
             this.buttonSelectPubKey.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSelectPubKey.Name = "buttonSelectPubKey";
             this.buttonSelectPubKey.Size = new System.Drawing.Size(174, 28);
@@ -96,7 +97,7 @@
             // 
             this.labelReciverKey.AutoSize = true;
             this.labelReciverKey.BackColor = System.Drawing.Color.Transparent;
-            this.labelReciverKey.Location = new System.Drawing.Point(192, 110);
+            this.labelReciverKey.Location = new System.Drawing.Point(70, 114);
             this.labelReciverKey.Name = "labelReciverKey";
             this.labelReciverKey.Size = new System.Drawing.Size(218, 16);
             this.labelReciverKey.TabIndex = 17;
@@ -105,7 +106,7 @@
             // 
             // openFileDialogReciverPubKey
             // 
-            this.openFileDialogReciverPubKey.Filter = "Public Key files (*.pub)|*.pub";
+            this.openFileDialogReciverPubKey.Filter = "Public Key files (*.pubk)|*.pubk";
             // 
             // saveFileDialog1
             // 
@@ -113,22 +114,37 @@
             this.saveFileDialog1.Title = "محل ذخیره فایل را انتخاب کنید";
             this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveFileDialog1_FileOk);
             // 
-            // checkBoxAmnbanKey
+            // radioButtonSelectKey
             // 
-            this.checkBoxAmnbanKey.AutoSize = true;
-            this.checkBoxAmnbanKey.Location = new System.Drawing.Point(427, 112);
-            this.checkBoxAmnbanKey.Name = "checkBoxAmnbanKey";
-            this.checkBoxAmnbanKey.Size = new System.Drawing.Size(109, 20);
-            this.checkBoxAmnbanKey.TabIndex = 18;
-            this.checkBoxAmnbanKey.Text = "Ammnban Key";
-            this.checkBoxAmnbanKey.UseVisualStyleBackColor = true;
+            this.radioButtonSelectKey.AutoSize = true;
+            this.radioButtonSelectKey.Checked = true;
+            this.radioButtonSelectKey.Location = new System.Drawing.Point(494, 110);
+            this.radioButtonSelectKey.Name = "radioButtonSelectKey";
+            this.radioButtonSelectKey.Size = new System.Drawing.Size(89, 20);
+            this.radioButtonSelectKey.TabIndex = 19;
+            this.radioButtonSelectKey.TabStop = true;
+            this.radioButtonSelectKey.Text = "انتخاب کلید";
+            this.radioButtonSelectKey.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonAmnBanKey
+            // 
+            this.radioButtonAmnBanKey.AutoSize = true;
+            this.radioButtonAmnBanKey.Location = new System.Drawing.Point(493, 141);
+            this.radioButtonAmnBanKey.Name = "radioButtonAmnBanKey";
+            this.radioButtonAmnBanKey.Size = new System.Drawing.Size(90, 20);
+            this.radioButtonAmnBanKey.TabIndex = 20;
+            this.radioButtonAmnBanKey.Text = "کلید امن‌بان";
+            this.radioButtonAmnBanKey.UseVisualStyleBackColor = true;
+            this.radioButtonAmnBanKey.CheckedChanged += new System.EventHandler(this.RadioButtonAmnBanKey_CheckedChanged);
             // 
             // FormEncryption
             // 
+            this.AcceptButton = this.buttonEncryption;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 217);
-            this.Controls.Add(this.checkBoxAmnbanKey);
+            this.Controls.Add(this.radioButtonAmnBanKey);
+            this.Controls.Add(this.radioButtonSelectKey);
             this.Controls.Add(this.labelReciverKey);
             this.Controls.Add(this.buttonSelectPubKey);
             this.Controls.Add(this.buttonEncryption);
@@ -136,6 +152,7 @@
             this.Controls.Add(this.buttonSelectFile);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "FormEncryption";
@@ -144,6 +161,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "رمزگذاری";
             this.Load += new System.EventHandler(this.FormEncryption_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormEncryption_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +177,7 @@
         private System.Windows.Forms.Label labelReciverKey;
         private System.Windows.Forms.OpenFileDialog openFileDialogReciverPubKey;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.CheckBox checkBoxAmnbanKey;
+        private System.Windows.Forms.RadioButton radioButtonSelectKey;
+        private System.Windows.Forms.RadioButton radioButtonAmnBanKey;
     }
 }

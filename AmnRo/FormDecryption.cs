@@ -18,6 +18,16 @@ namespace AmnRo
         public FormDecryption()
         {
             InitializeComponent();
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.DeepOrange400, Primary.DeepOrange500,
+                Primary.DeepOrange500, Accent.Orange200,
+                TextShade.WHITE
+            );
         }
 
         private void ButtonSelectFile_Click(object sender, EventArgs e)
@@ -131,5 +141,12 @@ namespace AmnRo
             textBoxFilePath.Text = fileNames[0];
         }
 
+        private void FormDecryption_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }
