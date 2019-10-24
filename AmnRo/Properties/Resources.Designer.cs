@@ -76,6 +76,16 @@ namespace AmnRo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap amnro {
+            get {
+                object obj = ResourceManager.GetObject("amnro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] BouncyCastle_Crypto {
@@ -101,6 +111,16 @@ namespace AmnRo.Properties {
         internal static System.Drawing.Bitmap enc3 {
             get {
                 object obj = ResourceManager.GetObject("enc3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_infographic_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-infographic-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

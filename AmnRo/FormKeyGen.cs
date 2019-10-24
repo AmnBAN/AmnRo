@@ -19,6 +19,16 @@ namespace AmnRo
         public FormKeyGen()
         {
             InitializeComponent();
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue800, Primary.Blue900,
+                Primary.Blue900, Accent.LightBlue200,
+                TextShade.WHITE
+            );
         }
         private void FormKeyGen_Load(object sender, EventArgs e)
         {

@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 using AmnRo.PGP;
+using MaterialSkin;
 using MaterialSkin.Controls;
 
 
@@ -13,6 +14,15 @@ namespace AmnRo
         public FormEncryption()
         {
             InitializeComponent();
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            //Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Green400, Primary.Green500,
+                Primary.Green500, Accent.LightGreen200,
+                TextShade.WHITE
+            );
         }
         private void FormEncryption_Load(object sender, EventArgs e)
         {
@@ -137,10 +147,6 @@ namespace AmnRo
             if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
-            }
-            else if (e.KeyCode == Keys.Enter)
-            {
-                ButtonEncryption_Click(sender, e);
             }
         }
 

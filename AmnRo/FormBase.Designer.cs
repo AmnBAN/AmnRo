@@ -33,18 +33,20 @@
             this.btnEncryption = new System.Windows.Forms.Button();
             this.btnKeyGen = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonAbout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDecryption
             // 
             this.btnDecryption.BackgroundImage = global::AmnRo.Properties.Resources.dec4;
             this.btnDecryption.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDecryption.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDecryption.ForeColor = System.Drawing.Color.Red;
             this.btnDecryption.Location = new System.Drawing.Point(314, 80);
             this.btnDecryption.Margin = new System.Windows.Forms.Padding(4);
             this.btnDecryption.Name = "btnDecryption";
             this.btnDecryption.Size = new System.Drawing.Size(110, 85);
-            this.btnDecryption.TabIndex = 0;
+            this.btnDecryption.TabIndex = 2;
             this.btnDecryption.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDecryption.UseVisualStyleBackColor = true;
             this.btnDecryption.Click += new System.EventHandler(this.BtnDecryption_Click);
@@ -56,6 +58,7 @@
             // 
             this.btnEncryption.BackgroundImage = global::AmnRo.Properties.Resources.enc3;
             this.btnEncryption.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEncryption.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEncryption.ForeColor = System.Drawing.Color.Green;
             this.btnEncryption.Location = new System.Drawing.Point(177, 80);
             this.btnEncryption.Margin = new System.Windows.Forms.Padding(4);
@@ -73,11 +76,12 @@
             // 
             this.btnKeyGen.BackgroundImage = global::AmnRo.Properties.Resources.keygen;
             this.btnKeyGen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnKeyGen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKeyGen.Location = new System.Drawing.Point(36, 80);
             this.btnKeyGen.Margin = new System.Windows.Forms.Padding(4);
             this.btnKeyGen.Name = "btnKeyGen";
             this.btnKeyGen.Size = new System.Drawing.Size(109, 85);
-            this.btnKeyGen.TabIndex = 2;
+            this.btnKeyGen.TabIndex = 0;
             this.btnKeyGen.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnKeyGen.UseVisualStyleBackColor = true;
             this.btnKeyGen.Click += new System.EventHandler(this.BtnKeyGen_Click);
@@ -94,11 +98,28 @@
             this.label1.TabIndex = 3;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // buttonAbout
+            // 
+            this.buttonAbout.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAbout.BackgroundImage = global::AmnRo.Properties.Resources.icons8_infographic_64;
+            this.buttonAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAbout.FlatAppearance.BorderSize = 0;
+            this.buttonAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAbout.Location = new System.Drawing.Point(420, 26);
+            this.buttonAbout.Name = "buttonAbout";
+            this.buttonAbout.Size = new System.Drawing.Size(35, 35);
+            this.buttonAbout.TabIndex = 3;
+            this.buttonAbout.UseVisualStyleBackColor = false;
+            this.buttonAbout.Click += new System.EventHandler(this.ButtonAbout_Click);
+            // 
             // FormBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 204);
+            this.Controls.Add(this.buttonAbout);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDecryption);
             this.Controls.Add(this.btnEncryption);
@@ -124,6 +145,7 @@
         private System.Windows.Forms.Button btnEncryption;
         private System.Windows.Forms.Button btnDecryption;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonAbout;
     }
 }
 
