@@ -41,9 +41,7 @@ namespace AmnRo
             if (string.IsNullOrEmpty(textBoxKeyName.Text))
             {
                 if(_English == true)
-                {
                     MessageBox.Show("Enter The Key's Name", "Key Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
                 else
                     MessageBox.Show("نام کلید را وارد کنید", "نام کلید", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
@@ -52,10 +50,8 @@ namespace AmnRo
             }
             if (string.IsNullOrEmpty(textBoxPass1.Text))
             {
-                if (_English == true)
-                {
+                if (_English == true
                     MessageBox.Show("Enter The Password", "Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
                 else
                     MessageBox.Show("کلمه عبور را وارد کنید", "کلمه عبور", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -65,9 +61,7 @@ namespace AmnRo
             if (textBoxPass1.Text != textBoxPass2.Text)
             {
                 if (_English == true)
-                {
                     MessageBox.Show("Enter The Password", "Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
                 else
                     MessageBox.Show("کلمه عبور را یکسان وارد کنید", "کلمه عبور", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -81,9 +75,7 @@ namespace AmnRo
                 if (errorProvider1.GetError(control) != string.Empty)
                 {
                     if (_English == true)
-                    {
                         MessageBox.Show("Error Occured - Fix the form's Errors", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                     else
                         MessageBox.Show("لطفا خطاهای فرم را برطرف کنید.", "خطا در ورودی ها", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -133,9 +125,7 @@ namespace AmnRo
             if (textBoxPass1.Text.Length > 25)
             {
                 if (_English == true)
-                {
                     errorProvider1.SetError(textBoxPass2, "Maximum Pass Size is 25 Character");
-                }
                 else
                     errorProvider1.SetError(textBoxPass1, "طول کلمه عبور کلید حداکثر 25 کاراکتر باید باشد.");
 
@@ -151,9 +141,7 @@ namespace AmnRo
             if (textBoxPass2.Text.Length > 25)
             {
                 if (_English == true)
-                {
                     errorProvider1.SetError(textBoxPass2, "Maximum Pass Size is 25 Character");
-                }
                 else
                     errorProvider1.SetError(textBoxPass2, "طول کلمه عبور کلید حداکثر 25 کاراکتر باید باشد.");
 
@@ -161,9 +149,7 @@ namespace AmnRo
             else if (textBoxPass2.Text != textBoxPass1.Text)
             {
                 if (_English == true)
-                {
                     errorProvider1.SetError(textBoxPass2, "Entered Passwords Are Not Same");
-                }
                 else
                     errorProvider1.SetError(textBoxPass2, "کلمه‌های عبور وارد شده یکسان نیستند.");
 

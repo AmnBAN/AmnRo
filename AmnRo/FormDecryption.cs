@@ -61,9 +61,7 @@ namespace AmnRo
             if (string.IsNullOrEmpty(textBoxFilePath.Text))
             {
                 if (_English == true)
-                {
-                    MessageBox.Show("Please Select A File To Decrypt", "File Select", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    MessageBox.Show("Please Select A File To Decrypt", "File Select", MessageBoxButtons.OK, MessageBoxIcon.Error); 
                 else
                 MessageBox.Show("لطفا فایل مورد نظر برای رمزگشایی را انتخاب کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 buttonSelectFile.Focus();
@@ -81,9 +79,7 @@ namespace AmnRo
             if (string.IsNullOrEmpty(textBoxFilePath.Text))
             {
                 if (_English == true)
-                {
                     MessageBox.Show("Please Select A File To Decrypt", "File Select", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
                 else
                     MessageBox.Show("لطفا فایل مورد نظر برای رمزگشایی را انتخاب کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 buttonSelectFile.Focus();
@@ -92,9 +88,7 @@ namespace AmnRo
             if (string.IsNullOrEmpty(openFileDialogPrivateKey.FileName))
             {
                 if (_English == true)
-                {
                     MessageBox.Show("Please Select Private Key File To Decrypt", "File Select", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
                 else
                     MessageBox.Show("لطفا کلید خصوصی خود را برای رمزگشایی انتخاب کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 buttonSelectPrivateKey.Focus();
@@ -103,9 +97,7 @@ namespace AmnRo
             if (labelReciverKey.Text.Equals("کلید خصوصی هنوز انتخاب نشده") || labelReciverKey.Text.Equals("Private Key Didn't Selected Yet"))
             {
                 if (_English == true)
-                {
                     MessageBox.Show("Private Key ", "File Select", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
                 else
                     MessageBox.Show("کلید خصوصی انتخاب نشده است", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 buttonSelectFile.Focus();
@@ -114,9 +106,7 @@ namespace AmnRo
             if (string.IsNullOrEmpty(textBoxPassword.Text))
             {
                 if (_English == true)
-                {
                     MessageBox.Show("Please Enter The Password", "File Select", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
                 else
                     MessageBox.Show("لطفا کلمه عبور را وارد کنید", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxPassword.Focus();
@@ -132,17 +122,13 @@ namespace AmnRo
                 catch
                 {
                     if(_English == true)
-                    {
                         MessageBox.Show("Password is wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                     else
                         MessageBox.Show("کلمه عبور اشتباه است", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (_English == true)
-                {
                     MessageBox.Show("Decryption Finished Successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
                 else
                     MessageBox.Show("رمزگشایی با موفقت انجام شد", "انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
