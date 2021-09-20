@@ -89,12 +89,11 @@ namespace AmnRo
                     return;
                 }
             }
-
-            if (!Directory.Exists("C:\\Users\\Win10\\AppData\\Amnro"))
+            if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Amnro"))
             {
-                Directory.CreateDirectory("C:\\Users\\Win10\\AppData\\Amnro");
+                Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Amnro");
             }
-            PGP.Key.GenerateKey(textBoxKeyName.Text, textBoxPass1.Text, "C:\\Users\\Win10\\AppData\\Amnro");
+            PGP.Key.GenerateKey(textBoxKeyName.Text, textBoxPass1.Text, Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Amnro");
             if (_English == true)
             {
                 MessageBox.Show("Keys Genertated Successfully", "Key Gen", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -116,7 +115,12 @@ namespace AmnRo
         {
             if (textBoxKeyName.Text.Length > 30)
             {
-                errorProvider1.SetError(textBoxKeyName, "طول نام کلید حداکثر 30 کاراکتر باید باشد.");
+                if (_English == true)
+                {
+                    MessageBox.Show("Keys Genertated Successfully", "Key Gen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                    MessageBox.Show("کلیدها با موفقیت ایجاد شدند", "ایجاد کلید", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -128,7 +132,13 @@ namespace AmnRo
         {
             if (textBoxPass1.Text.Length > 25)
             {
-                errorProvider1.SetError(textBoxPass1, "طول کلمه عبور کلید حداکثر 25 کاراکتر باید باشد.");
+                if (_English == true)
+                {
+                    errorProvider1.SetError(textBoxPass2, "Maximum Pass Size is 25 Character");
+                }
+                else
+                    errorProvider1.SetError(textBoxPass1, "طول کلمه عبور کلید حداکثر 25 کاراکتر باید باشد.");
+
             }
             else
             {
@@ -140,11 +150,23 @@ namespace AmnRo
         {
             if (textBoxPass2.Text.Length > 25)
             {
-                errorProvider1.SetError(textBoxPass2, "طول کلمه عبور کلید حداکثر 25 کاراکتر باید باشد.");
+                if (_English == true)
+                {
+                    errorProvider1.SetError(textBoxPass2, "Maximum Pass Size is 25 Character");
+                }
+                else
+                    errorProvider1.SetError(textBoxPass2, "طول کلمه عبور کلید حداکثر 25 کاراکتر باید باشد.");
+
             }
             else if (textBoxPass2.Text != textBoxPass1.Text)
             {
-                errorProvider1.SetError(textBoxPass2, "کلمه‌های عبور وارد شده یکسان نیستند.");
+                if (_English == true)
+                {
+                    errorProvider1.SetError(textBoxPass2, "Entered Passwords Are Not Same");
+                }
+                else
+                    errorProvider1.SetError(textBoxPass2, "کلمه‌های عبور وارد شده یکسان نیستند.");
+
             }
             else
             {
