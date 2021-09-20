@@ -1,14 +1,14 @@
-﻿using System;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.IO;
 using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
 
 namespace AmnRo
 {
     public partial class FormKeyGen : MaterialForm
     {
-        bool English = true;
+        bool _English = true;
         public FormKeyGen(bool English)
         {
             InitializeComponent();
@@ -22,12 +22,13 @@ namespace AmnRo
                 Primary.Blue900, Accent.LightBlue200,
                 TextShade.WHITE
             );
-            Convert_Lang();
+            Convert_Lang(English);
+            _English = English;
         }
 
-        private void Convert_Lang()
+        private void Convert_Lang(bool Lang)
         {
-            if (English == true)
+            if (Lang == true)
             {
                 label1.Text = "Key Size";
                 label2.Text = "Key Name";
@@ -39,7 +40,7 @@ namespace AmnRo
         {   
             if (string.IsNullOrEmpty(textBoxKeyName.Text))
             {
-                if(English == true)
+                if(_English == true)
                 {
                     MessageBox.Show("Enter The Key's Name", "Key Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -51,7 +52,7 @@ namespace AmnRo
             }
             if (string.IsNullOrEmpty(textBoxPass1.Text))
             {
-                if (English == true)
+                if (_English == true)
                 {
                     MessageBox.Show("Enter The Password", "Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -63,7 +64,7 @@ namespace AmnRo
             }
             if (textBoxPass1.Text != textBoxPass2.Text)
             {
-                if (English == true)
+                if (_English == true)
                 {
                     MessageBox.Show("Enter The Password", "Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -79,7 +80,7 @@ namespace AmnRo
             {
                 if (errorProvider1.GetError(control) != string.Empty)
                 {
-                    if (English == true)
+                    if (_English == true)
                     {
                         MessageBox.Show("Error Occured - Fix the form's Errors", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -94,7 +95,7 @@ namespace AmnRo
                 Directory.CreateDirectory("C:\\Users\\Win10\\AppData\\Amnro");
             }
             PGP.Key.GenerateKey(textBoxKeyName.Text, textBoxPass1.Text, "C:\\Users\\Win10\\AppData\\Amnro");
-            if (English == true)
+            if (_English == true)
             {
                 MessageBox.Show("Keys Genertated Successfully", "Key Gen", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

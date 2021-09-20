@@ -172,6 +172,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_CEI_icon.ico" />
+    <None Include="Resources\1054643-200.png" />
+    <None Include="Resources\1054579-200.png" />
     <None Include="Resources\png-clipart-round-black-illustration-computer-icons-language-icon-language-miscellaneous-text.png" />
     <None Include="Resources\Language_icon.png" />
     <None Include="Resources\amnro.png" />

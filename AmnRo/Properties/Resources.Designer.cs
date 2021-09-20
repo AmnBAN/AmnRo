@@ -61,6 +61,26 @@ namespace AmnRo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1054579_200 {
+            get {
+                object obj = ResourceManager.GetObject("1054579-200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1054643_200 {
+            get {
+                object obj = ResourceManager.GetObject("1054643-200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to mIsEXbBYrQEEALWCbD5X2+HxGB9lSElMSnf49uMOI8voIqXjDtNRs3vzm14mdHhx
         ///xam/cKXF1HmPz4XkmbiubVOGxsy7jzoCmMkQn2+vo8bJWNlYycEwfD5GtSP7AZdP
         ///TDmbe+BMrNbMd2IA4ya2jvrRu8Q7fSCsSXkpb5Q0jPwJqvFiaq+Pahr1AAUTtAlh

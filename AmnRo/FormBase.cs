@@ -163,17 +163,11 @@ namespace AmnRo
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (English == true)
-            {
-                English = false;
-            }
-            else
-                English = true;
+            English = true;
         }
-
-        private void FormBase_Load(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-
+            English = false;
         }
     }
 }

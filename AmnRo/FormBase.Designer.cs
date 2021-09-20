@@ -35,7 +35,9 @@
             this.labelInfo = new System.Windows.Forms.Label();
             this.buttonAbout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDecryption
@@ -109,7 +111,7 @@
             this.buttonAbout.FlatAppearance.BorderSize = 0;
             this.buttonAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAbout.Location = new System.Drawing.Point(425, 26);
+            this.buttonAbout.Location = new System.Drawing.Point(427, 169);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(35, 35);
             this.buttonAbout.TabIndex = 3;
@@ -121,8 +123,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::AmnRo.Properties.Resources.Language_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(427, 171);
+            this.pictureBox1.Image = global::AmnRo.Properties.Resources._1054579_200;
+            this.pictureBox1.Location = new System.Drawing.Point(427, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -130,11 +132,23 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::AmnRo.Properties.Resources._1054643_200;
+            this.pictureBox2.Location = new System.Drawing.Point(389, 27);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // FormBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 204);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonAbout);
             this.Controls.Add(this.labelInfo);
@@ -150,9 +164,9 @@
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "..:: AmnRo ::..";
-            this.Load += new System.EventHandler(this.FormBase_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormBase_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,6 +180,7 @@
         private System.Windows.Forms.Label labelInfo;
         private System.Windows.Forms.Button buttonAbout;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
