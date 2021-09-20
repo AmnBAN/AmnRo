@@ -33,6 +33,7 @@ namespace AmnRo
                 label2.Text = "Key Name";
                 label3.Text = "Password";
                 label4.Text = "Re-Enter Pass";
+
             }
         }
         private void BtnKeyGen_Click(object sender, EventArgs e)
