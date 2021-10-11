@@ -65,7 +65,7 @@ namespace AmnRo
                 else
                     MessageBox.Show("کلمه عبور را یکسان وارد کنید", "کلمه عبور", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                textBoxPass1.Focus();
+                textBoxPass1.Focus(); 
                 return;
             }
 
