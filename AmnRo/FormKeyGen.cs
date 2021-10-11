@@ -50,7 +50,7 @@ namespace AmnRo
             }
             if (string.IsNullOrEmpty(textBoxPass1.Text))
             {
-                if (_English == true
+                if (_English == true)
                     MessageBox.Show("Enter The Password", "Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     MessageBox.Show("کلمه عبور را وارد کنید", "کلمه عبور", MessageBoxButtons.OK, MessageBoxIcon.Error);
