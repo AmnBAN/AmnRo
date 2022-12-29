@@ -51,11 +51,6 @@ namespace AmnRo
             }
         }
 
-        private void ButtonSavePath_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonSelectPrivateKey_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxFilePath.Text))

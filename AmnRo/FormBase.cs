@@ -48,9 +48,10 @@ namespace AmnRo
         #region label texts
         private void BtnKeyGen_MouseHover(object sender, EventArgs e)
         {
-            if(English == true) {
+            if (English == true)
+            {
                 labelInfo.Text = "Key Generation";
-                }
+            }
             else
                 labelInfo.Text = "تولید کلید";
             btnKeyGen.Focus();
