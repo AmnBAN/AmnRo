@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using AmnRo.Properties;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -50,7 +51,7 @@ namespace AmnRo
         {
             if (English == true)
             {
-                labelInfo.Text = "Key Generation";
+                labelInfo.Text = "Generate Key";
             }
             else
                 labelInfo.Text = "تولید کلید";
@@ -91,7 +92,7 @@ namespace AmnRo
         {
             if (English == true)
             {
-                labelInfo.Text = "Key Generation";
+                labelInfo.Text = "Generate Key";
             }
             else
                 labelInfo.Text = "تولید کلید";
@@ -169,6 +170,26 @@ namespace AmnRo
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             English = false;
+        }
+
+        private void ChangeLanguage_Click(object sender, EventArgs e)
+        {
+            English = false;
+        }
+
+        private void ChangeLangageEn_Click(object sender, EventArgs e)
+        {
+            English = true;
+        }
+
+        private void ChangeLanguageIR_MouseHover(object sender, EventArgs e)
+        {
+            labelInfo.Text = "زبان فارسی";
+        }
+
+        private void ChangeLangageEn_MouseHover(object sender, EventArgs e)
+        {
+            labelInfo.Text = "EN Language";
         }
     }
 }

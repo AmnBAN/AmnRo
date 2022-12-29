@@ -30,6 +30,7 @@ namespace AmnRo
         {
             if (Lang == true)
             {
+                Text = "Generate Key";
                 label1.Text = "Key Size";
                 label2.Text = "Key Name";
                 label3.Text = "Password";

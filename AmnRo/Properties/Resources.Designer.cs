@@ -19,7 +19,7 @@ namespace AmnRo.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,26 +61,6 @@ namespace AmnRo.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1054579_200 {
-            get {
-                object obj = ResourceManager.GetObject("1054579-200", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1054643_200 {
-            get {
-                object obj = ResourceManager.GetObject("1054643-200", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to mIsEXbBYrQEEALWCbD5X2+HxGB9lSElMSnf49uMOI8voIqXjDtNRs3vzm14mdHhx
         ///xam/cKXF1HmPz4XkmbiubVOGxsy7jzoCmMkQn2+vo8bJWNlYycEwfD5GtSP7AZdP
         ///TDmbe+BMrNbMd2IA4ya2jvrRu8Q7fSCsSXkpb5Q0jPwJqvFiaq+Pahr1AAUTtAlh
@@ -106,21 +86,21 @@ namespace AmnRo.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static byte[] BouncyCastle_Crypto {
+        internal static System.Drawing.Bitmap dec4 {
             get {
-                object obj = ResourceManager.GetObject("BouncyCastle_Crypto", resourceCulture);
-                return ((byte[])(obj));
+                object obj = ResourceManager.GetObject("dec4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dec4 {
+        internal static System.Drawing.Bitmap en_flag {
             get {
-                object obj = ResourceManager.GetObject("dec4", resourceCulture);
+                object obj = ResourceManager.GetObject("en_flag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -148,40 +128,19 @@ namespace AmnRo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ir_flag {
+            get {
+                object obj = ResourceManager.GetObject("ir_flag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap keygen {
             get {
                 object obj = ResourceManager.GetObject("keygen", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Language_icon {
-            get {
-                object obj = ResourceManager.GetObject("Language_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] MaterialSkin {
-            get {
-                object obj = ResourceManager.GetObject("MaterialSkin", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap png_clipart_round_black_illustration_computer_icons_language_icon_language_miscellaneous_text {
-            get {
-                object obj = ResourceManager.GetObject("png-clipart-round-black-illustration-computer-icons-language-icon-language-miscel" +
-                        "laneous-text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

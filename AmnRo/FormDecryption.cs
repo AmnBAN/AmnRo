@@ -36,6 +36,7 @@ namespace AmnRo
         {
             if (English == true)
             {
+                Text = "Decryption";
                 buttonSelectFile.Text = "Select File";
                 buttonSelectPrivateKey.Text = "Select Private Key";
                 labelReciverKey.Text = "Private Key Didn't Get Selected Yet";

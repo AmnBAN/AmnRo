@@ -34,10 +34,10 @@
             this.btnKeyGen = new System.Windows.Forms.Button();
             this.labelInfo = new System.Windows.Forms.Label();
             this.buttonAbout = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.ChangeLanguageIR = new System.Windows.Forms.PictureBox();
+            this.ChangeLangageEn = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ChangeLanguageIR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChangeLangageEn)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDecryption
@@ -96,11 +96,12 @@
             // labelInfo
             // 
             this.labelInfo.AutoSize = true;
-            this.labelInfo.Location = new System.Drawing.Point(199, 176);
+            this.labelInfo.BackColor = System.Drawing.Color.Transparent;
+            this.labelInfo.Location = new System.Drawing.Point(187, 175);
             this.labelInfo.Name = "labelInfo";
             this.labelInfo.Size = new System.Drawing.Size(0, 19);
             this.labelInfo.TabIndex = 3;
-            this.labelInfo.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonAbout
             // 
@@ -111,7 +112,7 @@
             this.buttonAbout.FlatAppearance.BorderSize = 0;
             this.buttonAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAbout.Location = new System.Drawing.Point(427, 169);
+            this.buttonAbout.Location = new System.Drawing.Point(426, 167);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(35, 35);
             this.buttonAbout.TabIndex = 3;
@@ -121,35 +122,45 @@
             this.buttonAbout.MouseLeave += new System.EventHandler(this.ButtonAbout_MouseLeave);
             this.buttonAbout.MouseHover += new System.EventHandler(this.ButtonAbout_MouseHover);
             // 
-            // pictureBox1
+            // ChangeLanguageIR
             // 
-            this.pictureBox1.Image = global::AmnRo.Properties.Resources._1054579_200;
-            this.pictureBox1.Location = new System.Drawing.Point(427, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.ChangeLanguageIR.BackColor = System.Drawing.Color.Transparent;
+            this.ChangeLanguageIR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChangeLanguageIR.Image = global::AmnRo.Properties.Resources.ir_flag;
+            this.ChangeLanguageIR.Location = new System.Drawing.Point(411, 25);
+            this.ChangeLanguageIR.Margin = new System.Windows.Forms.Padding(0);
+            this.ChangeLanguageIR.Name = "ChangeLanguageIR";
+            this.ChangeLanguageIR.Size = new System.Drawing.Size(45, 38);
+            this.ChangeLanguageIR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ChangeLanguageIR.TabIndex = 5;
+            this.ChangeLanguageIR.TabStop = false;
+            this.ChangeLanguageIR.Click += new System.EventHandler(this.ChangeLanguage_Click);
+            this.ChangeLanguageIR.MouseLeave += new System.EventHandler(this.BtnDecryption_MouseLeave);
+            this.ChangeLanguageIR.MouseHover += new System.EventHandler(this.ChangeLanguageIR_MouseHover);
             // 
-            // pictureBox2
+            // ChangeLangageEn
             // 
-            this.pictureBox2.Image = global::AmnRo.Properties.Resources._1054643_200;
-            this.pictureBox2.Location = new System.Drawing.Point(389, 27);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.ChangeLangageEn.BackColor = System.Drawing.Color.Transparent;
+            this.ChangeLangageEn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChangeLangageEn.Image = global::AmnRo.Properties.Resources.en_flag;
+            this.ChangeLangageEn.Location = new System.Drawing.Point(353, 26);
+            this.ChangeLangageEn.Margin = new System.Windows.Forms.Padding(0);
+            this.ChangeLangageEn.Name = "ChangeLangageEn";
+            this.ChangeLangageEn.Size = new System.Drawing.Size(45, 35);
+            this.ChangeLangageEn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ChangeLangageEn.TabIndex = 6;
+            this.ChangeLangageEn.TabStop = false;
+            this.ChangeLangageEn.Click += new System.EventHandler(this.ChangeLangageEn_Click);
+            this.ChangeLangageEn.MouseLeave += new System.EventHandler(this.BtnDecryption_MouseLeave);
+            this.ChangeLangageEn.MouseHover += new System.EventHandler(this.ChangeLangageEn_MouseHover);
             // 
             // FormBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 204);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ChangeLangageEn);
+            this.Controls.Add(this.ChangeLanguageIR);
             this.Controls.Add(this.buttonAbout);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.btnDecryption);
@@ -165,8 +176,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "..:: AmnRo ::..";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormBase_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChangeLanguageIR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChangeLangageEn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,8 +190,8 @@
         private System.Windows.Forms.Button btnDecryption;
         private System.Windows.Forms.Label labelInfo;
         private System.Windows.Forms.Button buttonAbout;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox ChangeLanguageIR;
+        private System.Windows.Forms.PictureBox ChangeLangageEn;
     }
 }
 

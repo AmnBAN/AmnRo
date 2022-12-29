@@ -31,6 +31,7 @@ namespace AmnRo
         {
             if (English == true)
             {
+                Text = "Encryption";
                 buttonSelectFile.Text = "Select File";
                 labelReciverKey.Text = "Receiver's Public Key Did't Got Selected Yet";
                 radioButtonSelectKey.Text = "Key Select";
