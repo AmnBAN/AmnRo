@@ -13,7 +13,7 @@ namespace AmnRo
         public FormBase()
         {
             InitializeComponent();
-            // Create a material theme manager and add the form to manage (this)
+            // Create a material theme manager and add the form to manage (this) 
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
