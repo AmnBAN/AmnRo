@@ -108,9 +108,16 @@ namespace AmnRo
                 textBoxPassword.Focus();
                 return;
             }
+
+            Decrypter decrypter = new PGP.Decrypter();
+
+            // problem here
+            var ext = decrypter.ExtractExtension(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text);
+            saveFileDialog1.Filter = FilterFormat(ext);
+
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                Decrypter decrypter = new PGP.Decrypter();
+               
                 try
                 {
                     decrypter.Decrypt(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName);
@@ -133,6 +140,9 @@ namespace AmnRo
         private void TextBoxFilePath_TextChanged(object sender, EventArgs e)
         {
             saveFileDialog1.Filter = createNewFilter(textBoxFilePath.Text);
+        }
+        private static string FilterFormat(string ext){
+            return $"Amn File(*{ext})| *{ext}";
         }
         private static string createNewFilter(string fileName)
         {

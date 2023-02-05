@@ -2,6 +2,7 @@
 using MaterialSkin.Controls;
 using System;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace AmnRo
@@ -35,6 +36,8 @@ namespace AmnRo
                 label2.Text = "Key Name";
                 label3.Text = "Password";
                 label4.Text = "Re-Enter Pass";
+                labelChangePath.Text = "Key storage location";
+                changePathButton.Text = "Change storage location";
             }
         }
         private void BtnKeyGen_Click(object sender, EventArgs e)
@@ -82,11 +85,12 @@ namespace AmnRo
                     return;
                 }
             }
-            if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Amnro"))
-            {
-                Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Amnro");
-            }
-            PGP.Key.GenerateKey(textBoxKeyName.Text, textBoxPass1.Text, Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Amnro");
+            //if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Amnro"))
+            //{
+            //    Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Amnro");
+            //}
+            //PGP.Key.GenerateKey(textBoxKeyName.Text, textBoxPass1.Text, Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Amnro");
+            PGP.Key.GenerateKey(textBoxKeyName.Text, textBoxPass1.Text, textBoxKeyPath.Text);
             if (_English == true)
             {
                 MessageBox.Show("Keys Genertated Successfully", "Key Gen", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -164,7 +168,28 @@ namespace AmnRo
 
         private void FormKeyGen_Load(object sender, EventArgs e)
         {
+            textBoxKeyPath.Text = AssemblyDirectory;
+            folderBrowserDialogChangeKeyPath.SelectedPath = AssemblyDirectory;
+            comboBoxKeyLength.SelectedItem = comboBoxKeyLength.Items[1];
+        }
 
+        private void ChangePathButton_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialogChangeKeyPath.ShowDialog() == DialogResult.OK)
+            {
+                textBoxKeyPath.Text = folderBrowserDialogChangeKeyPath.SelectedPath;
+            }
+        }
+
+        public string AssemblyDirectory
+        {
+            get
+            {
+                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                UriBuilder uri = new UriBuilder(codeBase);
+                string path = Uri.UnescapeDataString(uri.Path);
+                return Path.GetDirectoryName(path);
+            }
         }
     }
 }

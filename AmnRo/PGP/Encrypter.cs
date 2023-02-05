@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -202,10 +203,29 @@ namespace AmnRo.PGP
 
         private static Stream ChainLiteralOut(Stream compressedOut, FileInfo file)
         {
+            #region Fill Additional Data
+            byte[] additionalDataBuffer = new byte[AdditionalBufferStructure.FullSize];
+            string ext = file.Extension;
+            string ver = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            byte[] extBytes = Encoding.GetEncoding("UTF-8").GetBytes(ext.ToCharArray()); // max:20
+            byte[] verBytes = Encoding.GetEncoding("UTF-8").GetBytes(ver.ToCharArray()); // max:20
+
+            for (int i = 0; i < extBytes.Length; i++)
+                additionalDataBuffer[i] = extBytes[i];
+            int verOffset = AdditionalBufferStructure.ExtensionSize;
+            for (int i = verOffset; i < verOffset + verBytes.Length; i++)
+                additionalDataBuffer[i] = verBytes[i - verOffset];
+
+            #endregion
+
 
             PgpLiteralDataGenerator pgpLiteralDataGenerator = new PgpLiteralDataGenerator();
 
-            return pgpLiteralDataGenerator.Open(compressedOut, PgpLiteralData.Binary, file);
+            var ldg = pgpLiteralDataGenerator.Open(compressedOut, PgpLiteralData.Binary, file.FullName , file.Length + additionalDataBuffer.Length , DateTime.Now);
+          
+            ldg.Write(additionalDataBuffer, 0 , additionalDataBuffer.Length);
+
+            return ldg ;
 
         }
 

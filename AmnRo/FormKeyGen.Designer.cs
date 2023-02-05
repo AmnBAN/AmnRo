@@ -41,6 +41,10 @@
             this.textBoxPass2 = new System.Windows.Forms.TextBox();
             this.folderBrowserDialogSaveKeyPath = new System.Windows.Forms.FolderBrowserDialog();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelChangePath = new System.Windows.Forms.Label();
+            this.changePathButton = new System.Windows.Forms.Button();
+            this.textBoxKeyPath = new System.Windows.Forms.TextBox();
+            this.folderBrowserDialogChangeKeyPath = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,12 +162,41 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.RightToLeft = true;
             // 
+            // labelChangePath
+            // 
+            this.labelChangePath.AutoSize = true;
+            this.labelChangePath.Location = new System.Drawing.Point(494, 160);
+            this.labelChangePath.Name = "labelChangePath";
+            this.labelChangePath.Size = new System.Drawing.Size(145, 19);
+            this.labelChangePath.TabIndex = 14;
+            this.labelChangePath.Text = ":محل ذخیره کلید ها";
+            // 
+            // changePathButton
+            // 
+            this.changePathButton.Location = new System.Drawing.Point(270, 156);
+            this.changePathButton.Name = "changePathButton";
+            this.changePathButton.Size = new System.Drawing.Size(218, 27);
+            this.changePathButton.TabIndex = 15;
+            this.changePathButton.Text = "تغییر محل ذخیره سازی ";
+            this.changePathButton.UseVisualStyleBackColor = true;
+            this.changePathButton.Click += new System.EventHandler(this.ChangePathButton_Click);
+            // 
+            // textBoxKeyPath
+            // 
+            this.textBoxKeyPath.Location = new System.Drawing.Point(27, 191);
+            this.textBoxKeyPath.Name = "textBoxKeyPath";
+            this.textBoxKeyPath.Size = new System.Drawing.Size(612, 27);
+            this.textBoxKeyPath.TabIndex = 16;
+            // 
             // FormKeyGen
             // 
             this.AcceptButton = this.btnKeyGen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(659, 295);
+            this.Controls.Add(this.textBoxKeyPath);
+            this.Controls.Add(this.changePathButton);
+            this.Controls.Add(this.labelChangePath);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxPass2);
             this.Controls.Add(this.label3);
@@ -203,5 +236,9 @@
         private System.Windows.Forms.TextBox textBoxPass2;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialogSaveKeyPath;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button changePathButton;
+        private System.Windows.Forms.Label labelChangePath;
+        private System.Windows.Forms.TextBox textBoxKeyPath;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialogChangeKeyPath;
     }
 }

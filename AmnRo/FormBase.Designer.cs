@@ -175,6 +175,7 @@
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "..:: AmnRo ::..";
+            this.Load += new System.EventHandler(this.FormBase_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormBase_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.ChangeLanguageIR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChangeLangageEn)).EndInit();
