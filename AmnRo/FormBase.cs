@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 using AmnRo.Properties;
 using MaterialSkin;
@@ -7,8 +9,9 @@ using MaterialSkin.Controls;
 
 namespace AmnRo
 {
+
     public partial class FormBase : MaterialForm
-    {       
+    {
         bool English = false;
         public FormBase()
         {
@@ -24,6 +27,10 @@ namespace AmnRo
                 Primary.BlueGrey500, Accent.LightBlue200,
                 TextShade.WHITE
             );
+
+            comboBoxLanguage.SelectedIndex = 0;
+
+            ChangeLanguageIR.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject($"{Thread.CurrentThread.CurrentCulture.Name}");
         }
         private void BtnKeyGen_Click(object sender, EventArgs e)
         {
@@ -49,82 +56,48 @@ namespace AmnRo
         #region label texts
         private void BtnKeyGen_MouseHover(object sender, EventArgs e)
         {
-            if (English == true)
-            {
-                labelInfo.Text = "Generate Key";
-            }
-            else
-                labelInfo.Text = "تولید کلید";
+            labelInfo.Text = Resources.Messages.GenerateKey;
             btnKeyGen.Focus();
         }
         private void BtnEncryption_MouseHover(object sender, EventArgs e)
         {
-            if (English == true)
-            {
-                labelInfo.Text = "Encryption";
-            }
-            else
-                labelInfo.Text = "رمزگذاری";
+            labelInfo.Text = Resources.Messages.Encryption;
+
             btnEncryption.Focus();
         }
 
         private void BtnDecryption_MouseHover(object sender, EventArgs e)
         {
-            if (English == true)
-            {
-                labelInfo.Text = "Decryption";
-            }
-            else
-                labelInfo.Text = "رمزگشایی";
+            labelInfo.Text = Resources.Messages.Decryption;
+
             btnDecryption.Focus();
         }
         private void ButtonAbout_MouseHover(object sender, EventArgs e)
         {
-            if (English == true)
-            {
-                labelInfo.Text = "About Us";
-            }
-            else
-                labelInfo.Text = "درباره ما";
+            labelInfo.Text = Resources.Messages.AboutUs;
+
             buttonAbout.Focus();
         }
         private void BtnKeyGen_Enter(object sender, EventArgs e)
         {
-            if (English == true)
-            {
-                labelInfo.Text = "Generate Key";
-            }
-            else
-                labelInfo.Text = "تولید کلید";
+            labelInfo.Text = Resources.Messages.GenerateKey;
+
         }
 
         private void BtnEncryption_Enter(object sender, EventArgs e)
         {
-            if (English == true)
-            {
-                labelInfo.Text = "Encryption";
-            }
-            else
-                labelInfo.Text = "رمزگذاری";
+            labelInfo.Text = Resources.Messages.Encryption;
         }
 
         private void BtnDecryption_Enter(object sender, EventArgs e)
         {
-            if (English == true)
-            {
-                labelInfo.Text = "Decryption";
-            }
-            else
-                labelInfo.Text = "رمزگشایی";
+            labelInfo.Text = Resources.Messages.Decryption;
+
         }
         private void ButtonAbout_Enter(object sender, EventArgs e)
         {
-            if (English == true)
-            {
-                labelInfo.Text = "About Us";
-            }
-            else
-                labelInfo.Text = "درباره ما";
+            labelInfo.Text = Resources.Messages.AboutUs;
+
         }
 
         private void ButtonAbout_MouseLeave(object sender, EventArgs e)
@@ -169,16 +142,26 @@ namespace AmnRo
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("fa");
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fa");
+            this.Refresh();
+
             English = false;
         }
 
         private void ChangeLanguage_Click(object sender, EventArgs e)
         {
-            English = false;
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("fa");
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fa"); this.Refresh();
+            //English = false;
         }
 
         private void ChangeLangageEn_Click(object sender, EventArgs e)
         {
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en");
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en"); this.Refresh();
+
             English = true;
         }
 
@@ -192,14 +175,12 @@ namespace AmnRo
             labelInfo.Text = "EN Language";
         }
 
-        
+
 
         private void FormBase_Load(object sender, EventArgs e)
         {
             //IntegrateCustomIcons();
             RegistryUtility.AddShieldToButton(ButtonIntegrate);
-            if (English)
-                ButtonIntegrate.Text = "Icon Set";
         }
 
         private void ButtonIntegrate_Click_1(object sender, EventArgs e)
@@ -212,11 +193,7 @@ namespace AmnRo
                 var err = RegistryUtility.IntegrateCustomIcons();
                 if (!err)
                 {
-                    if (English)
-                        MessageBox.Show("Icons Integrated Successfully", "Integration", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    else
-                        MessageBox.Show("شخصی سازی آیکون ها با موفقیت انجام شد", "ادغام", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MessageBox.Show(Resources.Messages.IconsIntegratedSuccessfully, Resources.Messages.Integration, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -224,8 +201,8 @@ namespace AmnRo
                 RegistryUtility.ExecuteAsAdmin();
             }
 
-            
+
         }
     }
-    
+
 }

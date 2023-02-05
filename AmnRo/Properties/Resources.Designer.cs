@@ -98,9 +98,9 @@ namespace AmnRo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap en_flag {
+        internal static System.Drawing.Bitmap en_US {
             get {
-                object obj = ResourceManager.GetObject("en_flag", resourceCulture);
+                object obj = ResourceManager.GetObject("en_US", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -118,9 +118,9 @@ namespace AmnRo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_infographic_64 {
+        internal static System.Drawing.Bitmap fa_IR {
             get {
-                object obj = ResourceManager.GetObject("icons8-infographic-64", resourceCulture);
+                object obj = ResourceManager.GetObject("fa_IR", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -128,9 +128,9 @@ namespace AmnRo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ir_flag {
+        internal static System.Drawing.Bitmap icons8_infographic_64 {
             get {
-                object obj = ResourceManager.GetObject("ir_flag", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8-infographic-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

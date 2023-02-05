@@ -102,11 +102,11 @@ namespace AmnRo
             var pubkeyPath = dirPath + "\\PublicKey.png";
             var enc3Path = dirPath + "\\enc3.png";
 
-            Resources.PrivateKey.Save(prikeyPath);
-            Resources.PublicKey.Save(pubkeyPath);
-            Resources.enc3.Save(enc3Path);
+            Properties.Resources.PrivateKey.Save(prikeyPath);
+            Properties.Resources.PublicKey.Save(pubkeyPath);
+            Properties.Resources.enc3.Save(enc3Path);
 
-
+            
             bool err = false;
 
             try

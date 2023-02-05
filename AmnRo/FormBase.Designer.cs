@@ -37,6 +37,7 @@
             this.ChangeLanguageIR = new System.Windows.Forms.PictureBox();
             this.ChangeLangageEn = new System.Windows.Forms.PictureBox();
             this.ButtonIntegrate = new System.Windows.Forms.Button();
+            this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ChangeLanguageIR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChangeLangageEn)).BeginInit();
             this.SuspendLayout();
@@ -127,7 +128,7 @@
             // 
             this.ChangeLanguageIR.BackColor = System.Drawing.Color.Transparent;
             this.ChangeLanguageIR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ChangeLanguageIR.Image = global::AmnRo.Properties.Resources.ir_flag;
+            this.ChangeLanguageIR.Image = global::AmnRo.Properties.Resources.fa_IR;
             this.ChangeLanguageIR.Location = new System.Drawing.Point(411, 25);
             this.ChangeLanguageIR.Margin = new System.Windows.Forms.Padding(0);
             this.ChangeLanguageIR.Name = "ChangeLanguageIR";
@@ -143,7 +144,7 @@
             // 
             this.ChangeLangageEn.BackColor = System.Drawing.Color.Transparent;
             this.ChangeLangageEn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ChangeLangageEn.Image = global::AmnRo.Properties.Resources.en_flag;
+            this.ChangeLangageEn.Image = global::AmnRo.Properties.Resources.en_US;
             this.ChangeLangageEn.Location = new System.Drawing.Point(353, 26);
             this.ChangeLangageEn.Margin = new System.Windows.Forms.Padding(0);
             this.ChangeLangageEn.Name = "ChangeLangageEn";
@@ -162,15 +163,27 @@
             this.ButtonIntegrate.Name = "ButtonIntegrate";
             this.ButtonIntegrate.Size = new System.Drawing.Size(109, 29);
             this.ButtonIntegrate.TabIndex = 7;
-            this.ButtonIntegrate.Text = "تنظیم آیکون";
+            this.ButtonIntegrate.Text = global::AmnRo.Resources.Messages.IconIntegrateButtonTitle;
             this.ButtonIntegrate.UseVisualStyleBackColor = false;
             this.ButtonIntegrate.Click += new System.EventHandler(this.ButtonIntegrate_Click_1);
+            // 
+            // comboBoxLanguage
+            // 
+            this.comboBoxLanguage.FormattingEnabled = true;
+            this.comboBoxLanguage.Items.AddRange(new object[] {
+            "فارسی",
+            "English"});
+            this.comboBoxLanguage.Location = new System.Drawing.Point(265, 30);
+            this.comboBoxLanguage.Name = "comboBoxLanguage";
+            this.comboBoxLanguage.Size = new System.Drawing.Size(85, 27);
+            this.comboBoxLanguage.TabIndex = 8;
             // 
             // FormBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 225);
+            this.Controls.Add(this.comboBoxLanguage);
             this.Controls.Add(this.ButtonIntegrate);
             this.Controls.Add(this.ChangeLangageEn);
             this.Controls.Add(this.ChangeLanguageIR);
@@ -207,6 +220,7 @@
         private System.Windows.Forms.PictureBox ChangeLanguageIR;
         private System.Windows.Forms.PictureBox ChangeLangageEn;
         private System.Windows.Forms.Button ButtonIntegrate;
+        private System.Windows.Forms.ComboBox comboBoxLanguage;
     }
 }
 
