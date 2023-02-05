@@ -44,7 +44,8 @@ namespace AmnRo
         {
             if (openFileDialogPlainFile.ShowDialog() == DialogResult.OK)
             {
-                textBoxFilePath.Text = openFileDialogPlainFile.FileName;
+                textBoxFilePath.Text = openFileDialogPlainFile.FileName;                
+                saveFileDialog1.FileName = Path.GetFileNameWithoutExtension(openFileDialogPlainFile.SafeFileName);
                 saveFileDialog1.Filter = createNewFilter(textBoxFilePath.Text);
 
             }

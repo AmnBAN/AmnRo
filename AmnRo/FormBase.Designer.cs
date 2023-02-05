@@ -36,6 +36,7 @@
             this.buttonAbout = new System.Windows.Forms.Button();
             this.ChangeLanguageIR = new System.Windows.Forms.PictureBox();
             this.ChangeLangageEn = new System.Windows.Forms.PictureBox();
+            this.ButtonIntegrate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ChangeLanguageIR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChangeLangageEn)).BeginInit();
             this.SuspendLayout();
@@ -112,7 +113,7 @@
             this.buttonAbout.FlatAppearance.BorderSize = 0;
             this.buttonAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAbout.Location = new System.Drawing.Point(426, 167);
+            this.buttonAbout.Location = new System.Drawing.Point(389, 181);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(35, 35);
             this.buttonAbout.TabIndex = 3;
@@ -154,11 +155,23 @@
             this.ChangeLangageEn.MouseLeave += new System.EventHandler(this.BtnDecryption_MouseLeave);
             this.ChangeLangageEn.MouseHover += new System.EventHandler(this.ChangeLangageEn_MouseHover);
             // 
+            // ButtonIntegrate
+            // 
+            this.ButtonIntegrate.BackColor = System.Drawing.Color.SkyBlue;
+            this.ButtonIntegrate.Location = new System.Drawing.Point(36, 184);
+            this.ButtonIntegrate.Name = "ButtonIntegrate";
+            this.ButtonIntegrate.Size = new System.Drawing.Size(109, 29);
+            this.ButtonIntegrate.TabIndex = 7;
+            this.ButtonIntegrate.Text = "تنظیم آیکون";
+            this.ButtonIntegrate.UseVisualStyleBackColor = false;
+            this.ButtonIntegrate.Click += new System.EventHandler(this.ButtonIntegrate_Click_1);
+            // 
             // FormBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 204);
+            this.ClientSize = new System.Drawing.Size(463, 225);
+            this.Controls.Add(this.ButtonIntegrate);
             this.Controls.Add(this.ChangeLangageEn);
             this.Controls.Add(this.ChangeLanguageIR);
             this.Controls.Add(this.buttonAbout);
@@ -193,6 +206,7 @@
         private System.Windows.Forms.Button buttonAbout;
         private System.Windows.Forms.PictureBox ChangeLanguageIR;
         private System.Windows.Forms.PictureBox ChangeLangageEn;
+        private System.Windows.Forms.Button ButtonIntegrate;
     }
 }
 

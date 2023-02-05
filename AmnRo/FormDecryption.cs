@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,9 +47,11 @@ namespace AmnRo
 
         private void ButtonSelectFile_Click(object sender, EventArgs e)
         {
+            openFileDialogEncryptFile.FileName = "";
             if (openFileDialogEncryptFile.ShowDialog() == DialogResult.OK)
             {
                 textBoxFilePath.Text = openFileDialogEncryptFile.FileName;
+                saveFileDialog1.FileName = Path.GetFileNameWithoutExtension(openFileDialogEncryptFile.SafeFileName);
             }
         }
 
@@ -111,8 +114,24 @@ namespace AmnRo
 
             Decrypter decrypter = new PGP.Decrypter();
 
-            // problem here
-            var ext = decrypter.ExtractExtension(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text);
+            void ShowErrorBox()
+            {
+                if (_English == true)
+                    MessageBox.Show("Password is wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("کلمه عبور اشتباه است", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            string ext;
+            try
+            {
+                ext = decrypter.ExtractExtension(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text);
+            }
+            catch (Exception)
+            {
+                ShowErrorBox();
+                return;
+            }
             saveFileDialog1.Filter = FilterFormat(ext);
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -124,10 +143,7 @@ namespace AmnRo
                 }
                 catch
                 {
-                    if(_English == true)
-                        MessageBox.Show("Password is wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else
-                        MessageBox.Show("کلمه عبور اشتباه است", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ShowErrorBox();
                     return;
                 }
                 if (_English == true)

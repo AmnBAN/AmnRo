@@ -1,10 +1,15 @@
-﻿using Microsoft.Win32;
+﻿using AmnRo.Properties;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AmnRo
 {
@@ -85,6 +90,77 @@ namespace AmnRo
             {
             }
 
+        }
+
+        public static bool IntegrateCustomIcons()
+        {
+            string dirPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Amnro";
+            if (!Directory.Exists(dirPath))
+                Directory.CreateDirectory(dirPath);
+
+            var prikeyPath = dirPath + "\\PrivateKey.png";
+            var pubkeyPath = dirPath + "\\PublicKey.png";
+            var enc3Path = dirPath + "\\enc3.png";
+
+            Resources.PrivateKey.Save(prikeyPath);
+            Resources.PublicKey.Save(pubkeyPath);
+            Resources.enc3.Save(enc3Path);
+
+
+            bool err = false;
+
+            try
+            {
+                RegistryUtility.SetValue(RegistryUtility.Extensions.private_key_extension, "", prikeyPath);
+                RegistryUtility.SetValue(RegistryUtility.Extensions.public_key_extension, "", pubkeyPath);
+                RegistryUtility.SetValue(RegistryUtility.Extensions.amn_extension, "", enc3Path);
+            }
+            catch (Exception exception)
+            {
+                err = true;
+                //MessageBox.Show(exception.Message, "Integration", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            RegistryUtility.RefereshWindowsIconCache();
+            return err;
+        }
+
+        public static void ExecuteAsAdmin()
+        {
+            try
+            {
+                var process = new Process();
+                process.StartInfo.FileName = Path.Combine(new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).FullName, "AmnRo.exe");
+                process.StartInfo.Arguments = "integrate";
+                process.StartInfo.UseShellExecute = true;
+                process.StartInfo.Verb = "runas";
+                process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+                process.Start();
+                //process.WaitForExit();
+
+                Application.Exit();
+            }
+            catch (Exception)
+            {
+            }
+           
+        }
+
+        public static bool IsAdministrator()
+        {
+            var identity = WindowsIdentity.GetCurrent();
+            var principal = new WindowsPrincipal(identity);
+            return principal.IsInRole(WindowsBuiltInRole.Administrator);
+        }
+
+        [DllImport("user32")]
+        public static extern UInt32 SendMessage
+            (IntPtr hWnd, UInt32 msg, UInt32 wParam, UInt32 lParam);
+        internal const int BCM_FIRST = 0x1600; //Normal button
+        internal const int BCM_SETSHIELD = (BCM_FIRST + 0x000C); //Elevated button
+        public static void AddShieldToButton(Button button)
+        {
+            button.FlatStyle = FlatStyle.System;
+            SendMessage(button.Handle, BCM_SETSHIELD, 0, 0xFFFFFFFF);
         }
     }
 }

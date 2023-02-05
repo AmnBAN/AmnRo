@@ -113,7 +113,6 @@
             // 
             // openFileDialogPrivateKey
             // 
-            this.openFileDialogPrivateKey.FileName = "openFileDialog2";
             this.openFileDialogPrivateKey.Filter = "Private Key files (*.priv)|*.priv";
             this.openFileDialogPrivateKey.Title = "بازکردن کلید خصوصی";
             // 

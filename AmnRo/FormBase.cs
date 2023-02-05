@@ -192,51 +192,39 @@ namespace AmnRo
             labelInfo.Text = "EN Language";
         }
 
-        private void ButtonIntegrate_Click(object sender, EventArgs e)
-        {
-            var err = IntegrateCustomIcons();
-            if (!err)
-            {
-                MessageBox.Show("Icons Integrated Successfully", "Integration", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-        }
-
-        private bool IntegrateCustomIcons()
-        {
-            string dirPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Amnro";
-            if (!Directory.Exists(dirPath))
-                Directory.CreateDirectory(dirPath);
-
-            var prikeyPath = dirPath + "\\PrivateKey.png";
-            var pubkeyPath = dirPath + "\\PublicKey.png";
-            var enc3Path = dirPath + "\\enc3.png";
-
-            Resources.PrivateKey.Save(prikeyPath);
-            Resources.PublicKey.Save(pubkeyPath);
-            Resources.enc3.Save(enc3Path);
-
-
-            bool err = false;
-
-            try
-            {
-                RegistryUtility.SetValue(RegistryUtility.Extensions.private_key_extension, "", prikeyPath);
-                RegistryUtility.SetValue(RegistryUtility.Extensions.public_key_extension, "", pubkeyPath);
-                RegistryUtility.SetValue(RegistryUtility.Extensions.amn_extension, "", enc3Path);
-            }
-            catch (Exception exception)
-            {
-                err = true;
-                //MessageBox.Show(exception.Message, "Integration", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            RegistryUtility.RefereshWindowsIconCache();
-            return err;
-        }
+        
 
         private void FormBase_Load(object sender, EventArgs e)
         {
-            IntegrateCustomIcons();
+            //IntegrateCustomIcons();
+            RegistryUtility.AddShieldToButton(ButtonIntegrate);
+            if (English)
+                ButtonIntegrate.Text = "Icon Set";
+        }
+
+        private void ButtonIntegrate_Click_1(object sender, EventArgs e)
+        {
+
+            var isAdmin = RegistryUtility.IsAdministrator();
+
+            if (isAdmin)
+            {
+                var err = RegistryUtility.IntegrateCustomIcons();
+                if (!err)
+                {
+                    if (English)
+                        MessageBox.Show("Icons Integrated Successfully", "Integration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show("شخصی سازی آیکون ها با موفقیت انجام شد", "ادغام", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
+            else
+            {
+                RegistryUtility.ExecuteAsAdmin();
+            }
+
+            
         }
     }
     
