@@ -204,5 +204,12 @@ namespace AmnRo
                 this.Close();
             }
         }
+
+        private void buttonSelectPrivateKey_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            if(Path.GetExtension(fileNames[0])== ".priv")
+            labelReciverKey.Text =Path.GetFileName(fileNames[0]);
+        }
     }
 }

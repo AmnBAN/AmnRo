@@ -115,7 +115,7 @@ namespace AmnRo
                 RegistryUtility.SetValue(RegistryUtility.Extensions.public_key_extension, "", pubkeyPath);
                 RegistryUtility.SetValue(RegistryUtility.Extensions.amn_extension, "", enc3Path);
             }
-            catch (Exception exception)
+            catch 
             {
                 err = true;
                 //MessageBox.Show(exception.Message, "Integration", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -152,15 +152,15 @@ namespace AmnRo
             return principal.IsInRole(WindowsBuiltInRole.Administrator);
         }
 
-        [DllImport("user32")]
-        public static extern UInt32 SendMessage
-            (IntPtr hWnd, UInt32 msg, UInt32 wParam, UInt32 lParam);
-        internal const int BCM_FIRST = 0x1600; //Normal button
-        internal const int BCM_SETSHIELD = (BCM_FIRST + 0x000C); //Elevated button
-        public static void AddShieldToButton(Button button)
-        {
-            button.FlatStyle = FlatStyle.System;
-            SendMessage(button.Handle, BCM_SETSHIELD, 0, 0xFFFFFFFF);
-        }
+        //[DllImport("user32")]
+        //public static extern UInt32 SendMessage
+        //    (IntPtr hWnd, UInt32 msg, UInt32 wParam, UInt32 lParam);
+        //internal const int BCM_FIRST = 0x1600; //Normal button
+        //internal const int BCM_SETSHIELD = (BCM_FIRST + 0x000C); //Elevated button
+        //public static void AddShieldToButton(Button button)
+        //{
+        //    button.FlatStyle = FlatStyle.System;
+        //    SendMessage(button.Handle, BCM_SETSHIELD, 0, 0xFFFFFFFF);
+        //}
     }
 }

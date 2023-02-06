@@ -96,24 +96,25 @@
             // 
             // labelInfo
             // 
-            this.labelInfo.AutoSize = true;
             this.labelInfo.BackColor = System.Drawing.Color.Transparent;
-            this.labelInfo.Location = new System.Drawing.Point(187, 175);
+            this.labelInfo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInfo.ForeColor = System.Drawing.Color.Navy;
+            this.labelInfo.Location = new System.Drawing.Point(69, 188);
             this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(0, 19);
+            this.labelInfo.Size = new System.Drawing.Size(325, 30);
             this.labelInfo.TabIndex = 3;
             this.labelInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonAbout
             // 
             this.buttonAbout.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAbout.BackgroundImage = global::AmnRo.Properties.Resources.icons8_infographic_64;
+            this.buttonAbout.BackgroundImage = global::AmnRo.Properties.Resources.infoIcon;
             this.buttonAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonAbout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAbout.FlatAppearance.BorderSize = 0;
             this.buttonAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAbout.Location = new System.Drawing.Point(389, 181);
+            this.buttonAbout.Location = new System.Drawing.Point(389, 186);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(35, 35);
             this.buttonAbout.TabIndex = 3;
@@ -157,14 +158,22 @@
             // 
             // ButtonIntegrate
             // 
-            this.ButtonIntegrate.BackColor = System.Drawing.Color.SkyBlue;
-            this.ButtonIntegrate.Location = new System.Drawing.Point(36, 184);
+            this.ButtonIntegrate.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonIntegrate.BackgroundImage = global::AmnRo.Properties.Resources.settings;
+            this.ButtonIntegrate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ButtonIntegrate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonIntegrate.FlatAppearance.BorderSize = 0;
+            this.ButtonIntegrate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.ButtonIntegrate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonIntegrate.Location = new System.Drawing.Point(36, 186);
             this.ButtonIntegrate.Name = "ButtonIntegrate";
-            this.ButtonIntegrate.Size = new System.Drawing.Size(109, 29);
+            this.ButtonIntegrate.Size = new System.Drawing.Size(35, 35);
             this.ButtonIntegrate.TabIndex = 7;
-            this.ButtonIntegrate.Text = "تنظیم آیکون";
             this.ButtonIntegrate.UseVisualStyleBackColor = false;
             this.ButtonIntegrate.Click += new System.EventHandler(this.ButtonIntegrate_Click_1);
+            this.ButtonIntegrate.Enter += new System.EventHandler(this.ButtonIntegrate_Enter);
+            this.ButtonIntegrate.MouseLeave += new System.EventHandler(this.ButtonIntegrate_MouseLeave);
+            this.ButtonIntegrate.MouseHover += new System.EventHandler(this.ButtonIntegrate_MouseHover);
             // 
             // FormBase
             // 
@@ -193,7 +202,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ChangeLanguageIR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChangeLangageEn)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

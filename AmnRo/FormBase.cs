@@ -8,7 +8,7 @@ using MaterialSkin.Controls;
 namespace AmnRo
 {
     public partial class FormBase : MaterialForm
-    {       
+    {
         bool English = false;
         public FormBase()
         {
@@ -20,8 +20,8 @@ namespace AmnRo
 
             // Configure color schema
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.BlueGrey800, Primary.BlueGrey900,
-                Primary.BlueGrey500, Accent.LightBlue200,
+                Primary.Indigo800, Primary.Indigo900,
+                Primary.Indigo500, Accent.LightBlue200,
                 TextShade.WHITE
             );
         }
@@ -81,9 +81,7 @@ namespace AmnRo
         private void ButtonAbout_MouseHover(object sender, EventArgs e)
         {
             if (English == true)
-            {
                 labelInfo.Text = "About Us";
-            }
             else
                 labelInfo.Text = "درباره ما";
             buttonAbout.Focus();
@@ -192,14 +190,12 @@ namespace AmnRo
             labelInfo.Text = "EN Language";
         }
 
-        
+
 
         private void FormBase_Load(object sender, EventArgs e)
         {
             //IntegrateCustomIcons();
-            RegistryUtility.AddShieldToButton(ButtonIntegrate);
-            if (English)
-                ButtonIntegrate.Text = "Icon Set";
+            //RegistryUtility.AddShieldToButton(ButtonIntegrate);
         }
 
         private void ButtonIntegrate_Click_1(object sender, EventArgs e)
@@ -224,8 +220,29 @@ namespace AmnRo
                 RegistryUtility.ExecuteAsAdmin();
             }
 
-            
+
+        }
+
+        private void ButtonIntegrate_Enter(object sender, EventArgs e)
+        {
+            if (English == true)
+                labelInfo.Text = "Add AmnRo Icons to the OS";
+            else
+                labelInfo.Text = "افزودن آیکون‌های امن‌رو به سیستم عامل";
+        }
+
+        private void ButtonIntegrate_MouseHover(object sender, EventArgs e)
+        {
+            if (English == true)
+                labelInfo.Text = "Add AmnRo Icons to the OS";
+            else
+                labelInfo.Text = "افزودن آیکون‌های امن‌رو به سیستم عامل";
+            ButtonIntegrate.Focus();
+        }
+        private void ButtonIntegrate_MouseLeave(object sender, EventArgs e)
+        {
+            labelInfo.Text = "";
         }
     }
-    
+
 }

@@ -186,5 +186,12 @@ namespace AmnRo
                     labelReciverKey.Text = "کلید عمومی گیرنده هنوز انتخاب نشده";
             }
         }
+
+        private void buttonSelectPubKey_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            if (Path.GetExtension(fileNames[0]) == ".pubk")
+                labelReciverKey.Text = Path.GetFileName(fileNames[0]);
+        }
     }
 }

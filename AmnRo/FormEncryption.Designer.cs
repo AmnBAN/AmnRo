@@ -84,22 +84,25 @@
             // 
             // buttonSelectPubKey
             // 
-            this.buttonSelectPubKey.Location = new System.Drawing.Point(305, 108);
+            this.buttonSelectPubKey.AllowDrop = true;
+            this.buttonSelectPubKey.Location = new System.Drawing.Point(330, 108);
             this.buttonSelectPubKey.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSelectPubKey.Name = "buttonSelectPubKey";
-            this.buttonSelectPubKey.Size = new System.Drawing.Size(174, 28);
+            this.buttonSelectPubKey.Size = new System.Drawing.Size(166, 28);
             this.buttonSelectPubKey.TabIndex = 16;
             this.buttonSelectPubKey.Text = "انتخاب کلید عمومی گیرنده";
             this.buttonSelectPubKey.UseVisualStyleBackColor = true;
             this.buttonSelectPubKey.Click += new System.EventHandler(this.ButtonSelectPubKey_Click);
+            this.buttonSelectPubKey.DragDrop += new System.Windows.Forms.DragEventHandler(this.buttonSelectPubKey_DragDrop);
+            this.buttonSelectPubKey.DragEnter += new System.Windows.Forms.DragEventHandler(this.TextBoxFilePath_DragEnter);
             // 
             // labelReciverKey
             // 
             this.labelReciverKey.AutoSize = true;
             this.labelReciverKey.BackColor = System.Drawing.Color.Transparent;
-            this.labelReciverKey.Location = new System.Drawing.Point(22, 114);
+            this.labelReciverKey.Location = new System.Drawing.Point(14, 114);
             this.labelReciverKey.Name = "labelReciverKey";
-            this.labelReciverKey.Size = new System.Drawing.Size(218, 16);
+            this.labelReciverKey.Size = new System.Drawing.Size(217, 16);
             this.labelReciverKey.TabIndex = 17;
             this.labelReciverKey.Text = "کلید عمومی گیرنده هنوز انتخاب نشده";
             this.labelReciverKey.Click += new System.EventHandler(this.LabelReciverKey_Click);
@@ -118,9 +121,9 @@
             // 
             this.radioButtonSelectKey.AutoSize = true;
             this.radioButtonSelectKey.Checked = true;
-            this.radioButtonSelectKey.Location = new System.Drawing.Point(494, 110);
+            this.radioButtonSelectKey.Location = new System.Drawing.Point(500, 112);
             this.radioButtonSelectKey.Name = "radioButtonSelectKey";
-            this.radioButtonSelectKey.Size = new System.Drawing.Size(89, 20);
+            this.radioButtonSelectKey.Size = new System.Drawing.Size(88, 20);
             this.radioButtonSelectKey.TabIndex = 19;
             this.radioButtonSelectKey.TabStop = true;
             this.radioButtonSelectKey.Text = "انتخاب کلید";
@@ -129,9 +132,9 @@
             // radioButtonAmnBanKey
             // 
             this.radioButtonAmnBanKey.AutoSize = true;
-            this.radioButtonAmnBanKey.Location = new System.Drawing.Point(493, 141);
+            this.radioButtonAmnBanKey.Location = new System.Drawing.Point(499, 141);
             this.radioButtonAmnBanKey.Name = "radioButtonAmnBanKey";
-            this.radioButtonAmnBanKey.Size = new System.Drawing.Size(90, 20);
+            this.radioButtonAmnBanKey.Size = new System.Drawing.Size(89, 20);
             this.radioButtonAmnBanKey.TabIndex = 20;
             this.radioButtonAmnBanKey.Text = "کلید امن‌بان";
             this.radioButtonAmnBanKey.UseVisualStyleBackColor = true;

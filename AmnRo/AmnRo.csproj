@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>AmnRo</RootNamespace>
     <AssemblyName>AmnRo</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -162,20 +162,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_CEI_icon.ico" />
+    <None Include="Resources\settings.png" />
     <None Include="Resources\PublicKey.png" />
     <None Include="Resources\PrivateKey.png" />
-    <None Include="Resources\public.ico" />
     <None Include="Resources\en-flag.png" />
-    <None Include="Resources\usa-flag.png" />
     <None Include="Resources\ir-flag.png" />
-    <None Include="Resources\1054643-200.png" />
-    <None Include="Resources\1054579-200.png" />
-    <None Include="Resources\png-clipart-round-black-illustration-computer-icons-language-icon-language-miscellaneous-text.png" />
-    <None Include="Resources\Language_icon.png" />
     <None Include="Resources\amnro.png" />
-    <None Include="Resources\icons8-infographic-64.png" />
+    <None Include="Resources\infoIcon.png" />
     <None Include="Resources\MaterialSkin.dll" />
-    <None Include="Resources\BouncyCastle.Crypto.dll" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -185,8 +179,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="BouncyCastle">
-      <Version>1.8.9</Version>
+    <PackageReference Include="BouncyCastle.OpenPGP">
+      <Version>2.0.0.1</Version>
     </PackageReference>
     <PackageReference Include="Costura.Fody">
       <Version>5.7.0</Version>
@@ -197,9 +191,6 @@
       <Version>6.6.4</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="System.Management.Automation.dll">
-      <Version>10.0.10586</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
