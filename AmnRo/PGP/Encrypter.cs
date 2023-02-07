@@ -222,7 +222,7 @@ namespace AmnRo.PGP
             PgpLiteralDataGenerator pgpLiteralDataGenerator = new PgpLiteralDataGenerator();
 
             var ldg = pgpLiteralDataGenerator.Open(compressedOut, PgpLiteralData.Binary, file.FullName , file.Length + additionalDataBuffer.Length , DateTime.Now);
-          
+
             ldg.Write(additionalDataBuffer, 0 , additionalDataBuffer.Length);
 
             return ldg ;

@@ -125,9 +125,9 @@ namespace AmnRo
             string ext;
             try
             {
-                ext = decrypter.ExtractExtension(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text);
+                ext = decrypter.DecryptFile(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, "").Item1;
             }
-            catch (Exception)
+            catch (Exception exception)
             {
                 ShowErrorBox();
                 return;
@@ -139,9 +139,9 @@ namespace AmnRo
                
                 try
                 {
-                    decrypter.Decrypt(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName);
+                    decrypter.DecryptFile(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName);
                 }
-                catch
+                catch(Exception exception)
                 {
                     ShowErrorBox();
                     return;
