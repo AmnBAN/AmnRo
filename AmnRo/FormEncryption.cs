@@ -160,6 +160,8 @@ namespace AmnRo
         {
             string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             textBoxFilePath.Text = fileNames[0];
+            saveFileDialog1.FileName = Path.GetFileNameWithoutExtension(fileNames[0]);
+            saveFileDialog1.Filter = createNewFilter(textBoxFilePath.Text);
         }
 
         private void FormEncryption_KeyDown(object sender, KeyEventArgs e)
@@ -191,7 +193,11 @@ namespace AmnRo
         {
             string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             if (Path.GetExtension(fileNames[0]) == ".pubk")
+            {
                 labelReciverKey.Text = Path.GetFileName(fileNames[0]);
+                openFileDialogReciverPubKey.FileName = fileNames[0];
+            }
+                
         }
     }
 }

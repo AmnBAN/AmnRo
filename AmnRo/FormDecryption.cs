@@ -93,15 +93,6 @@ namespace AmnRo
                 buttonSelectPrivateKey.Focus();
                 return;
             }
-            if (labelReciverKey.Text.Equals("کلید خصوصی هنوز انتخاب نشده") || labelReciverKey.Text.Equals("Private Key Didn't Selected Yet"))
-            {
-                if (_English == true)
-                    MessageBox.Show("Private Key ", "File Select", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                    MessageBox.Show("کلید خصوصی انتخاب نشده است", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                buttonSelectFile.Focus();
-                return;
-            }
             if (string.IsNullOrEmpty(textBoxPassword.Text))
             {
                 if (_English == true)
@@ -132,14 +123,15 @@ namespace AmnRo
                 ShowErrorBox();
                 return;
             }
-            saveFileDialog1.Filter = FilterFormat(ext);
+            if (ext != "")
+                saveFileDialog1.Filter = FilterFormat(ext);
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                
                 try
                 {
-                    decrypter.DecryptFile(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName);
+                    decrypter.DecryptFile(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName , (ext!=""));
                 }
                 catch(Exception exception)
                 {
@@ -195,6 +187,7 @@ namespace AmnRo
         {
             string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             textBoxFilePath.Text = fileNames[0];
+            saveFileDialog1.FileName = Path.GetFileNameWithoutExtension(fileNames[0]);
         }
 
         private void FormDecryption_KeyDown(object sender, KeyEventArgs e)
@@ -209,7 +202,11 @@ namespace AmnRo
         {
             string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             if(Path.GetExtension(fileNames[0])== ".priv")
-            labelReciverKey.Text =Path.GetFileName(fileNames[0]);
+            {
+                labelReciverKey.Text =Path.GetFileName(fileNames[0]);
+                openFileDialogPrivateKey.FileName = fileNames[0];
+            }
+            
         }
     }
 }

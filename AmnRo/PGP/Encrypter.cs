@@ -17,6 +17,8 @@ namespace AmnRo.PGP
 
         private const int BufferSize = 0x10000; // should always be power of 2 
 
+        private const int ProgramVersion = 111;
+
         /// <summary>
 
         /// Instantiate a new PgpEncrypt class with initialized PgpEncryptionKeys.
@@ -206,15 +208,16 @@ namespace AmnRo.PGP
             #region Fill Additional Data
             byte[] additionalDataBuffer = new byte[AdditionalBufferStructure.FullSize];
             string ext = file.Extension;
-            string ver = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            byte[] extBytes = Encoding.GetEncoding("UTF-8").GetBytes(ext.ToCharArray()); // max:20
-            byte[] verBytes = Encoding.GetEncoding("UTF-8").GetBytes(ver.ToCharArray()); // max:20
+            string ver = "AmnRo" + ProgramVersion.ToString();
+            byte[] extBytes = Encoding.GetEncoding("UTF-8").GetBytes(ext.ToCharArray());
+            byte[] verBytes = Encoding.GetEncoding("UTF-8").GetBytes(ver.ToCharArray());
 
-            for (int i = 0; i < extBytes.Length; i++)
-                additionalDataBuffer[i] = extBytes[i];
-            int verOffset = AdditionalBufferStructure.ExtensionSize;
-            for (int i = verOffset; i < verOffset + verBytes.Length; i++)
-                additionalDataBuffer[i] = verBytes[i - verOffset];
+
+            for (int i = 0; i < verBytes.Length; i++)
+                additionalDataBuffer[i] = verBytes[i];
+            int extOffset = AdditionalBufferStructure.VersionSize;
+            for (int i = extOffset; i < extOffset + extBytes.Length; i++)
+                additionalDataBuffer[i] = extBytes[i - extOffset];
 
             #endregion
 
