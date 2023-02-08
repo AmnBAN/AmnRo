@@ -173,7 +173,7 @@ namespace AmnRo.PGP
 
             if (ver.Substring(0, 5) != "AmnRo")
             {
-                ext = "";
+                ver = "";
             }
 
             return Tuple.Create(ext, ver);

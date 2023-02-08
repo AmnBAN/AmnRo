@@ -18,12 +18,25 @@ namespace AmnRo
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 
-            // Configure color schema
-            materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Indigo800, Primary.Indigo900,
-                Primary.Indigo500, Accent.LightBlue200,
-                TextShade.WHITE
-            );
+            if (RegistryUtility.IsAdministrator())
+            {
+                // Configure color schema
+                materialSkinManager.ColorScheme = new ColorScheme(
+                    Primary.Grey800, Primary.Grey900,
+                    Primary.Grey500, Accent.LightBlue200,
+                    TextShade.WHITE
+                );
+            }
+            else
+            {
+                // Configure color schema
+                materialSkinManager.ColorScheme = new ColorScheme(
+                    Primary.Indigo800, Primary.Indigo900,
+                    Primary.Indigo500, Accent.LightBlue200,
+                    TextShade.WHITE
+                );
+            }
+            
         }
         private void BtnKeyGen_Click(object sender, EventArgs e)
         {

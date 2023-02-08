@@ -114,9 +114,12 @@ namespace AmnRo
             }
 
             string ext;
+            string ver;
             try
             {
-                ext = decrypter.DecryptFile(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, "").Item1;
+                var data = decrypter.DecryptFile(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, "");
+                ext = data.Item1;
+                ver = data.Item2;
             }
             catch (Exception exception)
             {
@@ -131,7 +134,7 @@ namespace AmnRo
                
                 try
                 {
-                    decrypter.DecryptFile(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName , (ext!=""));
+                    decrypter.DecryptFile(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName , (ver!=""));
                 }
                 catch(Exception exception)
                 {
