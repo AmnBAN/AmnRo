@@ -30,11 +30,16 @@ namespace AmnRo
                         
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            string arg = "";
             if (args.Length > 0 && args[0] == "integrate")
             {
                 RegistryUtility.IntegrateCustomIcons();
             }
-            Application.Run(new FormBase());
+            if (args.Length > 0)
+            {
+                arg = args[0];
+            }
+            Application.Run(new FormBase(arg));
 
         }
     }

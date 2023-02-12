@@ -12,7 +12,7 @@ namespace AmnRo
     public partial class FormEncryption : MaterialForm
     {
         bool _English;
-        public FormEncryption(bool English)
+        public FormEncryption(bool English , string pubkeyPath = "")
         {
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
@@ -26,6 +26,13 @@ namespace AmnRo
             );
             Convert_Lang(English);
             _English = English;
+
+            if(pubkeyPath != "")
+            {
+                labelReciverKey.Text = Path.GetFileName(pubkeyPath);
+                openFileDialogReciverPubKey.FileName = pubkeyPath;
+            }
+
         }
         private void Convert_Lang(bool English)
         {

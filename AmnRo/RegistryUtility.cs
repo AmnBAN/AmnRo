@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security.AccessControl;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,14 +56,28 @@ namespace AmnRo
 
             var extSubKey = Registry.ClassesRoot.CreateSubKey(ext_key);
             if (extSubKey != null)
-                extSubKey.SetValue("", "AmnRo.exe");
+            {
+                extSubKey.SetValue("", "AmnRo"+ext_key);
+            }
+                
 
 
-            var DefaultIcon = extSubKey.CreateSubKey("DefaultIcon");
-
-            
+            var DefaultIcon = extSubKey.CreateSubKey("DefaultIcon");            
             if (DefaultIcon != null)
                 DefaultIcon.SetValue(key, value);
+
+
+            var app1 = Registry.ClassesRoot.OpenSubKey("AmnRo" + ext_key , true) ??
+                Registry.ClassesRoot.CreateSubKey("AmnRo" + ext_key);
+            var icon1 = app1.OpenSubKey("DefaultIcon" , true) ??
+                app1.CreateSubKey("DefaultIcon");
+            var command1 = app1.OpenSubKey("shell\\open\\command" , true) ??
+                app1.CreateSubKey("shell\\open\\command");
+            command1.SetValue("", "\""+ AssemblyPath + "\" \"%1\"");
+            icon1.SetValue("", value);
+
+
+
         }
 
         public static void RemoveRegistry(Extensions ext)
@@ -75,6 +91,8 @@ namespace AmnRo
             string ext_openWith_path = RegistryOpenWith + ext_string;
             if (Registry.CurrentUser.OpenSubKey(ext_openWith_path) != null)
                 Registry.CurrentUser.OpenSubKey(ext_openWith_path , true).DeleteSubKey("UserChoice" , false);
+
+
 
         }
 
@@ -115,7 +133,7 @@ namespace AmnRo
                 RegistryUtility.SetValue(RegistryUtility.Extensions.public_key_extension, "", pubkeyPath);
                 RegistryUtility.SetValue(RegistryUtility.Extensions.amn_extension, "", enc3Path);
             }
-            catch 
+            catch (Exception exception)
             {
                 err = true;
                 //MessageBox.Show(exception.Message, "Integration", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -151,6 +169,19 @@ namespace AmnRo
             var principal = new WindowsPrincipal(identity);
             return principal.IsInRole(WindowsBuiltInRole.Administrator);
         }
+
+
+        public static string AssemblyPath
+        {
+            get
+            {
+                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                UriBuilder uri = new UriBuilder(codeBase);
+                string path = Uri.UnescapeDataString(uri.Path);
+                return Path.Combine(Path.GetDirectoryName(path) , Path.GetFileName(path));
+            }
+        }
+
 
         //[DllImport("user32")]
         //public static extern UInt32 SendMessage

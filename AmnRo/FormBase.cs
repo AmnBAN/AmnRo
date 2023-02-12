@@ -10,7 +10,7 @@ namespace AmnRo
     public partial class FormBase : MaterialForm
     {
         bool English = false;
-        public FormBase()
+        public FormBase(string arg)
         {
             InitializeComponent();
             // Create a material theme manager and add the form to manage (this) 
@@ -36,6 +36,16 @@ namespace AmnRo
                     TextShade.WHITE
                 );
             }
+
+            MessageBox.Show("Message: " + arg);
+
+            if (arg.EndsWith("pubk"))
+            {
+                StartEncForm(arg);
+            }else if (arg.EndsWith(".amn") || arg.EndsWith(".priv"))
+            {
+                StartDecForm(arg);
+            }
             
         }
         private void BtnKeyGen_Click(object sender, EventArgs e)
@@ -47,15 +57,24 @@ namespace AmnRo
 
         private void BtnEncryption_Click(object sender, EventArgs e)
         {
+            StartEncForm();
+        }
+
+        private void StartEncForm(string pubkeyPath = "")
+        {
             this.Hide();
-            new FormEncryption(English).ShowDialog();
+            new FormEncryption(English , pubkeyPath).ShowDialog();
             this.Show();
         }
 
         private void BtnDecryption_Click(object sender, EventArgs e)
         {
+            StartDecForm();
+        }
+        private void StartDecForm(string filePath = "")
+        {
             this.Hide();
-            new FormDecryption(English).ShowDialog();
+            new FormDecryption(English , filePath).ShowDialog();
             this.Show();
         }
 

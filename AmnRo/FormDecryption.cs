@@ -17,7 +17,7 @@ namespace AmnRo
     public partial class FormDecryption : MaterialForm
     {
         bool _English;
-        public FormDecryption(bool English)
+        public FormDecryption(bool English , string filePath = "")
         {
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
@@ -32,6 +32,18 @@ namespace AmnRo
             );
             Convert_Lang(English);
             _English = English;
+
+
+            if (filePath.EndsWith(".amn"))
+            {
+                textBoxFilePath.Text = filePath;
+                saveFileDialog1.FileName = Path.GetFileNameWithoutExtension(filePath);
+            }else if (filePath.EndsWith(".priv"))
+            {
+                labelReciverKey.Text = Path.GetFileName(filePath);
+                openFileDialogPrivateKey.FileName = filePath;
+            }
+
         }
         private void Convert_Lang(bool English)
         {
