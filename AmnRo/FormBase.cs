@@ -37,7 +37,7 @@ namespace AmnRo
                 );
             }
 
-            MessageBox.Show("Message: " + arg);
+            //MessageBox.Show("Message: " + arg);
 
             if (arg.EndsWith("pubk"))
             {
