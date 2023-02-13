@@ -51,10 +51,11 @@ namespace AmnRo
         {
             if (openFileDialogPlainFile.ShowDialog() == DialogResult.OK)
             {
+                if (!CheckExtensionLength(openFileDialogPlainFile.FileName))
+                    return;
                 textBoxFilePath.Text = openFileDialogPlainFile.FileName;                
                 saveFileDialog1.FileName = Path.GetFileNameWithoutExtension(openFileDialogPlainFile.SafeFileName);
                 saveFileDialog1.Filter = createNewFilter(textBoxFilePath.Text);
-
             }
         }
         private void ButtonSelectPubKey_Click(object sender, EventArgs e)
@@ -145,6 +146,8 @@ namespace AmnRo
 
         private void TextBoxFilePath_TextChanged(object sender, EventArgs e)
         {
+            if (!CheckExtensionLength(textBoxFilePath.Text))
+                return;
             saveFileDialog1.Filter = createNewFilter(textBoxFilePath.Text);
         }
 
@@ -166,6 +169,8 @@ namespace AmnRo
         private void TextBoxFilePath_DragDrop(object sender, DragEventArgs e)
         {
             string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            if (!CheckExtensionLength(fileNames[0]))
+                return;
             textBoxFilePath.Text = fileNames[0];
             saveFileDialog1.FileName = Path.GetFileNameWithoutExtension(fileNames[0]);
             saveFileDialog1.Filter = createNewFilter(textBoxFilePath.Text);
@@ -205,6 +210,16 @@ namespace AmnRo
                 openFileDialogReciverPubKey.FileName = fileNames[0];
             }
                 
+        }
+
+        private bool CheckExtensionLength(string filename)
+        {
+            if (Path.GetExtension(filename).Length >= AdditionalBufferStructure.ExtensionSize / 2)
+            {
+                MessageBox.Show("The Extension length has exceeded the limit", "Error");
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -45,3 +45,11 @@ https://github.com/AmnBAN/AmnRo/releases
 [Bouncy Castle](https://github.com/bcgit/bc-csharp)
 
 [MaterialSkin](https://github.com/giansalex/MaterialSkin)
+
+# ساختار فایل رمزنکاری شده 
+
+- 20 بایت ابتدایی برای ورژن برنامه 
+مثالی از ورژن : Amnro111
+- 40 بایت برای پسوند فایل
+
+> دقت کنید که حروف اسکی هر کدام یک بایت فضا میگیرند و حروف غیر اسکی هرکدام 2 بایت . پس طول پسوند نباید بیشتر از 20 حرف شود
