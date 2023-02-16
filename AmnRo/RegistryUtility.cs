@@ -116,12 +116,12 @@ namespace AmnRo
             if (!Directory.Exists(dirPath))
                 Directory.CreateDirectory(dirPath);
 
-            var prikeyPath = dirPath + "\\PrivateKey.png";
-            var pubkeyPath = dirPath + "\\PublicKey.png";
+            var prikeyPath = dirPath + "\\PrivateKeyIcon.png";
+            var pubkeyPath = dirPath + "\\PublicKeyIcon.png";
             var enc3Path = dirPath + "\\enc3.png";
 
-            Resources.PrivateKey.Save(prikeyPath);
-            Resources.PublicKey.Save(pubkeyPath);
+            Resources.PrivateKeyICON.Save(prikeyPath);
+            Resources.PublicKeyICON.Save(pubkeyPath);
             Resources.enc3.Save(enc3Path);
 
 

@@ -148,9 +148,9 @@ namespace AmnRo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PrivateKey {
+        internal static System.Drawing.Bitmap PrivateKeyICON {
             get {
-                object obj = ResourceManager.GetObject("PrivateKey", resourceCulture);
+                object obj = ResourceManager.GetObject("PrivateKeyICON", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -158,9 +158,9 @@ namespace AmnRo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PublicKey {
+        internal static System.Drawing.Bitmap PublicKeyICON {
             get {
-                object obj = ResourceManager.GetObject("PublicKey", resourceCulture);
+                object obj = ResourceManager.GetObject("PublicKeyICON", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
