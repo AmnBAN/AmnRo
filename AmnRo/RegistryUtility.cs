@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security.AccessControl;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,14 +56,28 @@ namespace AmnRo
 
             var extSubKey = Registry.ClassesRoot.CreateSubKey(ext_key);
             if (extSubKey != null)
-                extSubKey.SetValue("", "AmnRo.exe");
+            {
+                extSubKey.SetValue("", "AmnRo"+ext_key);
+            }
+                
 
 
-            var DefaultIcon = extSubKey.CreateSubKey("DefaultIcon");
-
-            
+            var DefaultIcon = extSubKey.CreateSubKey("DefaultIcon");            
             if (DefaultIcon != null)
                 DefaultIcon.SetValue(key, value);
+
+
+            var app1 = Registry.ClassesRoot.OpenSubKey("AmnRo" + ext_key , true) ??
+                Registry.ClassesRoot.CreateSubKey("AmnRo" + ext_key);
+            var icon1 = app1.OpenSubKey("DefaultIcon" , true) ??
+                app1.CreateSubKey("DefaultIcon");
+            var command1 = app1.OpenSubKey("shell\\open\\command" , true) ??
+                app1.CreateSubKey("shell\\open\\command");
+            command1.SetValue("", "\""+ AssemblyPath + "\" \"%1\"");
+            icon1.SetValue("", value);
+
+
+
         }
 
         public static void RemoveRegistry(Extensions ext)
@@ -75,6 +91,8 @@ namespace AmnRo
             string ext_openWith_path = RegistryOpenWith + ext_string;
             if (Registry.CurrentUser.OpenSubKey(ext_openWith_path) != null)
                 Registry.CurrentUser.OpenSubKey(ext_openWith_path , true).DeleteSubKey("UserChoice" , false);
+
+
 
         }
 
@@ -98,12 +116,12 @@ namespace AmnRo
             if (!Directory.Exists(dirPath))
                 Directory.CreateDirectory(dirPath);
 
-            var prikeyPath = dirPath + "\\PrivateKey.png";
-            var pubkeyPath = dirPath + "\\PublicKey.png";
+            var prikeyPath = dirPath + "\\PrivateKeyIcon.png";
+            var pubkeyPath = dirPath + "\\PublicKeyIcon.png";
             var enc3Path = dirPath + "\\enc3.png";
 
-            Resources.PrivateKey.Save(prikeyPath);
-            Resources.PublicKey.Save(pubkeyPath);
+            Resources.PrivateKeyICON.Save(prikeyPath);
+            Resources.PublicKeyICON.Save(pubkeyPath);
             Resources.enc3.Save(enc3Path);
 
 
@@ -152,15 +170,28 @@ namespace AmnRo
             return principal.IsInRole(WindowsBuiltInRole.Administrator);
         }
 
-        [DllImport("user32")]
-        public static extern UInt32 SendMessage
-            (IntPtr hWnd, UInt32 msg, UInt32 wParam, UInt32 lParam);
-        internal const int BCM_FIRST = 0x1600; //Normal button
-        internal const int BCM_SETSHIELD = (BCM_FIRST + 0x000C); //Elevated button
-        public static void AddShieldToButton(Button button)
+
+        public static string AssemblyPath
         {
-            button.FlatStyle = FlatStyle.System;
-            SendMessage(button.Handle, BCM_SETSHIELD, 0, 0xFFFFFFFF);
+            get
+            {
+                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                UriBuilder uri = new UriBuilder(codeBase);
+                string path = Uri.UnescapeDataString(uri.Path);
+                return Path.Combine(Path.GetDirectoryName(path) , Path.GetFileName(path));
+            }
         }
+
+
+        //[DllImport("user32")]
+        //public static extern UInt32 SendMessage
+        //    (IntPtr hWnd, UInt32 msg, UInt32 wParam, UInt32 lParam);
+        //internal const int BCM_FIRST = 0x1600; //Normal button
+        //internal const int BCM_SETSHIELD = (BCM_FIRST + 0x000C); //Elevated button
+        //public static void AddShieldToButton(Button button)
+        //{
+        //    button.FlatStyle = FlatStyle.System;
+        //    SendMessage(button.Handle, BCM_SETSHIELD, 0, 0xFFFFFFFF);
+        //}
     }
 }

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AmnRo.PGP;
@@ -17,7 +18,7 @@ namespace AmnRo
     public partial class FormDecryption : MaterialForm
     {
         bool _English;
-        public FormDecryption(bool English)
+        public FormDecryption(bool English , string filePath = "")
         {
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
@@ -32,6 +33,18 @@ namespace AmnRo
             );
             Convert_Lang(English);
             _English = English;
+
+
+            if (filePath.EndsWith(".amn"))
+            {
+                textBoxFilePath.Text = filePath;
+                saveFileDialog1.FileName = Path.GetFileNameWithoutExtension(filePath);
+            }else if (filePath.EndsWith(".priv"))
+            {
+                labelReciverKey.Text = Path.GetFileName(filePath);
+                openFileDialogPrivateKey.FileName = filePath;
+            }
+
         }
         private void Convert_Lang(bool English)
         {
@@ -74,7 +87,6 @@ namespace AmnRo
 
         private void ButtonDecryption_Click(object sender, EventArgs e)
         {
-           
             if (string.IsNullOrEmpty(textBoxFilePath.Text))
             {
                 if (_English == true)
@@ -93,15 +105,6 @@ namespace AmnRo
                 buttonSelectPrivateKey.Focus();
                 return;
             }
-            if (labelReciverKey.Text.Equals("کلید خصوصی هنوز انتخاب نشده") || labelReciverKey.Text.Equals("Private Key Didn't Selected Yet"))
-            {
-                if (_English == true)
-                    MessageBox.Show("Private Key ", "File Select", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                    MessageBox.Show("کلید خصوصی انتخاب نشده است", "انتخاب فایل", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                buttonSelectFile.Focus();
-                return;
-            }
             if (string.IsNullOrEmpty(textBoxPassword.Text))
             {
                 if (_English == true)
@@ -112,6 +115,7 @@ namespace AmnRo
                 return;
             }
 
+            
             Decrypter decrypter = new PGP.Decrypter();
 
             void ShowErrorBox()
@@ -121,27 +125,32 @@ namespace AmnRo
                 else
                     MessageBox.Show("کلمه عبور اشتباه است", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            
             string ext;
+            string ver;
             try
             {
-                ext = decrypter.ExtractExtension(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text);
+                var data = decrypter.DecryptFile(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, "");
+                ext = data.Item1;
+                ver = data.Item2;
             }
-            catch (Exception)
+            catch (Exception exception)
             {
                 ShowErrorBox();
                 return;
             }
-            saveFileDialog1.Filter = FilterFormat(ext);
+            
+            if (ext != "")
+                saveFileDialog1.Filter = FilterFormat(ext);
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                
                 try
                 {
-                    decrypter.Decrypt(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName);
+                    decrypter.DecryptFile(textBoxFilePath.Text, openFileDialogPrivateKey.FileName, textBoxPassword.Text, saveFileDialog1.FileName , (ver!=""));
                 }
-                catch
+                catch(Exception exception)
                 {
                     ShowErrorBox();
                     return;
@@ -195,6 +204,7 @@ namespace AmnRo
         {
             string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             textBoxFilePath.Text = fileNames[0];
+            saveFileDialog1.FileName = Path.GetFileNameWithoutExtension(fileNames[0]);
         }
 
         private void FormDecryption_KeyDown(object sender, KeyEventArgs e)
@@ -203,6 +213,17 @@ namespace AmnRo
             {
                 this.Close();
             }
+        }
+
+        private void buttonSelectPrivateKey_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            if(Path.GetExtension(fileNames[0])== ".priv")
+            {
+                labelReciverKey.Text =Path.GetFileName(fileNames[0]);
+                openFileDialogPrivateKey.FileName = fileNames[0];
+            }
+            
         }
     }
 }

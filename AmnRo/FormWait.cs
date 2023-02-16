@@ -9,10 +9,10 @@ using MaterialSkin.Controls;
 
 namespace AmnRo
 {
-    public partial class FormEncryption : MaterialForm
+    public partial class FormWait : MaterialForm
     {
         bool _English;
-        public FormEncryption(bool English , string pubkeyPath = "")
+        public FormWait(bool English , string pubkeyPath = "")
         {
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;

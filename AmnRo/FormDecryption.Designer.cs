@@ -47,13 +47,14 @@
             this.labelReciverKey.BackColor = System.Drawing.Color.Transparent;
             this.labelReciverKey.Location = new System.Drawing.Point(189, 111);
             this.labelReciverKey.Name = "labelReciverKey";
-            this.labelReciverKey.Size = new System.Drawing.Size(187, 16);
+            this.labelReciverKey.Size = new System.Drawing.Size(186, 16);
             this.labelReciverKey.TabIndex = 24;
             this.labelReciverKey.Text = "کلید خصوصی هنوز انتخاب نشده";
             this.labelReciverKey.Click += new System.EventHandler(this.LabelReciverKey_Click);
             // 
             // buttonSelectPrivateKey
             // 
+            this.buttonSelectPrivateKey.AllowDrop = true;
             this.buttonSelectPrivateKey.Location = new System.Drawing.Point(9, 105);
             this.buttonSelectPrivateKey.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSelectPrivateKey.Name = "buttonSelectPrivateKey";
@@ -62,6 +63,8 @@
             this.buttonSelectPrivateKey.Text = "انتخاب کلید خصوصی";
             this.buttonSelectPrivateKey.UseVisualStyleBackColor = true;
             this.buttonSelectPrivateKey.Click += new System.EventHandler(this.ButtonSelectPrivateKey_Click);
+            this.buttonSelectPrivateKey.DragDrop += new System.Windows.Forms.DragEventHandler(this.buttonSelectPrivateKey_DragDrop);
+            this.buttonSelectPrivateKey.DragEnter += new System.Windows.Forms.DragEventHandler(this.TextBoxFilePath_DragEnter);
             // 
             // buttonDecryption
             // 
@@ -129,7 +132,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 145);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 16);
+            this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 26;
             this.label1.Text = "کلمه عبور:";
             // 
