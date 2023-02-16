@@ -18,7 +18,7 @@ For download latest version go to [Release page](https://github.com/AmnBAN/AmnRo
 - Generate Keys
 - Save **Private key**
 - Give **Public key** to others
-- Other peoples can encrypt files with your **Public key** and you can decypt them with **Private key** .
+- Other peoples can encrypt files with your **Public key** and you can decrypt them with **Private key** .
 
 # Libs
 
