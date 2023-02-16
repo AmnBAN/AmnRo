@@ -219,7 +219,7 @@ namespace AmnRo
 
         private void ChangeLangageEn_MouseHover(object sender, EventArgs e)
         {
-            labelInfo.Text = "EN Language";
+            labelInfo.Text = "English Language";
         }
 
 
