@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AmnRo.PGP;
@@ -86,7 +87,6 @@ namespace AmnRo
 
         private void ButtonDecryption_Click(object sender, EventArgs e)
         {
-           
             if (string.IsNullOrEmpty(textBoxFilePath.Text))
             {
                 if (_English == true)
@@ -115,6 +115,7 @@ namespace AmnRo
                 return;
             }
 
+            
             Decrypter decrypter = new PGP.Decrypter();
 
             void ShowErrorBox()
@@ -124,7 +125,7 @@ namespace AmnRo
                 else
                     MessageBox.Show("کلمه عبور اشتباه است", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            
             string ext;
             string ver;
             try
@@ -138,6 +139,7 @@ namespace AmnRo
                 ShowErrorBox();
                 return;
             }
+            
             if (ext != "")
                 saveFileDialog1.Filter = FilterFormat(ext);
 
