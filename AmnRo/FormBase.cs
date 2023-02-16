@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using AmnRo.Properties;
@@ -17,6 +18,12 @@ namespace AmnRo
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            //Change Form Font to thahoma
+            materialSkinManager.ROBOTO_MEDIUM_10 = new Font("Tahoma", 10);
+            materialSkinManager.ROBOTO_MEDIUM_11 = new Font("Tahoma", 11);
+            materialSkinManager.ROBOTO_MEDIUM_12 = new Font("Tahoma", 11,FontStyle.Bold); //Form title font
+            materialSkinManager.ROBOTO_REGULAR_11 = new Font("Tahoma", 11);
 
             if (RegistryUtility.IsAdministrator())
             {
