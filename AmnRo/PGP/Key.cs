@@ -30,7 +30,7 @@ namespace AmnRo.PGP
             {
                 secretOut = new ArmoredOutputStream(secretOut);
             }
-
+            //TODO:change cas5 to AES
             PgpSecretKey secretKey = new PgpSecretKey(PgpSignature.DefaultCertification, PublicKeyAlgorithmTag.RsaGeneral, publicKey, privateKey, DateTime.Now, identity, SymmetricKeyAlgorithmTag.Cast5, passPhrase, null, null, new SecureRandom()
                 //                ,"BC"
                 );

@@ -181,10 +181,7 @@ namespace AmnRo.PGP
 
             PgpEncryptedDataGenerator encryptedDataGenerator;
 
-            encryptedDataGenerator =
-
-                new PgpEncryptedDataGenerator(SymmetricKeyAlgorithmTag.TripleDes,
-                                              new SecureRandom());
+            encryptedDataGenerator = new PgpEncryptedDataGenerator(SymmetricKeyAlgorithmTag.TripleDes,new SecureRandom()); //TODO: update 3des
 
             encryptedDataGenerator.AddMethod(m_encryptionKeys.PublicKey);
 
