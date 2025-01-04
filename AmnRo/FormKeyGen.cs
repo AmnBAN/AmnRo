@@ -90,7 +90,7 @@ namespace AmnRo
             //    Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Amnro");
             //}
             //PGP.Key.GenerateKey(textBoxKeyName.Text, textBoxPass1.Text, Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Amnro");
-            PGP.Key.GenerateKey(textBoxKeyName.Text, textBoxPass1.Text, textBoxKeyPath.Text);
+            PGP.Key.GenerateKey(textBoxKeyName.Text, textBoxPass1.Text, textBoxKeyPath.Text,);
             if (_English == true)
             {
                 MessageBox.Show("Keys Genertated Successfully", "Key Gen", MessageBoxButtons.OK, MessageBoxIcon.Information);
