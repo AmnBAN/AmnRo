@@ -114,10 +114,10 @@ namespace AmnRo
             {
                 if (_English == true)
                 {
-                    MessageBox.Show("Keys Genertated Successfully", "Key Gen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Key name must be lessthan 30 character", "Key Name", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("کلیدها با موفقیت ایجاد شدند", "ایجاد کلید", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("طول نام کلید حداکثر 30 کاراکتر باید باشد", "نام کلید", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
