@@ -12,11 +12,10 @@ namespace AmnRo.PGP
 {
     public class Key
     {
-        public static void GenerateKey(string keyname, string password, string keyStorePath)
+        public static void GenerateKey(string keyname, string password, string keyStorePath,int keyLength)
         {
             IAsymmetricCipherKeyPairGenerator kpg = new RsaKeyPairGenerator();
-            //TODO: inspect parameters length, certainity
-            kpg.Init(new RsaKeyGenerationParameters(BigInteger.ValueOf(0x13), new SecureRandom(), 1024, 8));
+            kpg.Init(new RsaKeyGenerationParameters(BigInteger.ValueOf(65537), new SecureRandom(), keyLength, 20));
             AsymmetricCipherKeyPair kp = kpg.GenerateKeyPair();
             FileStream PrivateOut = new FileInfo(string.Format("{0}\\{1}-PrivateKey.priv", keyStorePath, keyname)).OpenWrite();
             FileStream PublickOut = new FileInfo(string.Format("{0}\\{1}-PublicKey.pubk", keyStorePath, keyname)).OpenWrite();
