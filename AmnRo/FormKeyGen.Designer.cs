@@ -89,7 +89,7 @@
             // textBoxKeyName
             // 
             this.textBoxKeyName.Location = new System.Drawing.Point(27, 71);
-            this.textBoxKeyName.MaxLength = 31;
+            this.textBoxKeyName.MaxLength = 30;
             this.textBoxKeyName.Name = "textBoxKeyName";
             this.textBoxKeyName.Size = new System.Drawing.Size(317, 27);
             this.textBoxKeyName.TabIndex = 1;
