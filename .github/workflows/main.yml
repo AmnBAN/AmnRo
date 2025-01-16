@@ -1,8 +1,0 @@
-            - name: Publish .NET Package
-  # You may pin to the exact commit or the version.
-  # uses: yashmahi88/publish-.net@fd1a6e4f2e3921733b9c507d3eff7ea54d5764b5
-  uses: yashmahi88/publish-.net@v1
-  with:
-    # The version of the .NET SDK to use
-    dotnet-version: # default is 8.0.x
-          
