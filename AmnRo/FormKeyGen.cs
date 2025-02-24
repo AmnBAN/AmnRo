@@ -72,6 +72,16 @@ namespace AmnRo
                 textBoxPass1.Focus(); 
                 return;
             }
+            if (textBoxPass1.Text.Length <8 )
+            {
+                if (_English == true)
+                    MessageBox.Show("Password length must be at leat 8 character", "Password is short", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("طول کلمه عبور حداقل باید 8 کاراکتر باشد", "کلمه عبور کوتاه است", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                textBoxPass1.Focus();
+                return;
+            }
 
             //chech error provider
             foreach (Control control in Controls)
